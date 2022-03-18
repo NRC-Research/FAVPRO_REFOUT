@@ -1,0 +1,268 @@
+{
+    "vessel geometry" : {
+        "internal radius" : "78.465 in",
+        "wall thickness" : "8.149 in",
+        "clad thickness" : "0.276 in"
+    },
+    "material properties" : {
+        "base" : {
+            "temperature dependent" : true,
+            "reference temperature" : "70.0 F",
+            "density" : "490.1 lbm/ft^3",
+            "thermal conductivity table" : {
+                "T" : [
+                    69.8,
+                    300.2,
+                    548.6,
+                    613.4
+                ],
+                "k(T)" : [
+                    21.8,
+                    22.4,
+                    21.8,
+                    22.3
+                ],
+                "T units" : "F",
+                "k(T) units" : "BTU/(h ft F)"
+            },
+            "specific heat table" : {
+                "T" : [
+                    69.8,
+                    300.2,
+                    548.6,
+                    613.4
+                ],
+                "c(T)" : [
+                    0.106,
+                    0.1197,
+                    0.1329,
+                    0.1364
+                ],
+                "T units" : "F",
+                "c(T) units" : "BTU/(lbm F)"
+            },
+            "young's elastic modulus table" : {
+                "T" : [
+                    69.8,
+                    300.2,
+                    548.6,
+                    613.4
+                ],
+                "E(T)" : [
+                    29196.0,
+                    28006.0,
+                    26701.0,
+                    26121.0
+                ],
+                "T units" : "F",
+                "E(T) units" : "ksi"
+            },
+            "thermal expansion coefficient table" : {
+                "T" : [
+                    69.8,
+                    300.2,
+                    548.6,
+                    613.4
+                ],
+                "alpha(T)" : [
+                    7.0222e-6,
+                    7.4278e-6,
+                    7.7722e-6,
+                    7.85e-6
+                ],
+                "T units" : "F",
+                "alpha(T) units" : "1/F"
+            },
+            "poisson's ratio table" : {
+                "T" : [
+                    0.0,
+                    1.0e3
+                ],
+                "nu(T)" : [
+                    0.3,
+                    0.3
+                ],
+                "T units" : "F"
+            }
+        },
+        "clad" : {
+            "temperature dependent" : true,
+            "reference temperature" : "70.0 F",
+            "density" : "496.3 lbm/ft^3",
+            "thermal conductivity table" : {
+                "T" : [
+                    69.8,
+                    300.2,
+                    548.6,
+                    613.4
+                ],
+                "k(T)" : [
+                    8.6,
+                    9.8,
+                    11.1,
+                    11.4
+                ],
+                "T units" : "F",
+                "k(T) units" : "BTU/(h ft F)"
+            },
+            "specific heat table" : {
+                "T" : [
+                    69.8,
+                    300.2,
+                    548.6,
+                    613.4
+                ],
+                "c(T)" : [
+                    0.1148,
+                    0.1235,
+                    0.1301,
+                    0.1313
+                ],
+                "T units" : "F",
+                "c(T) units" : "BTU/(lbm F)"
+            },
+            "young's elastic modulus table" : {
+                "T" : [
+                    69.8,
+                    300.2,
+                    548.6,
+                    613.4
+                ],
+                "E(T)" : [
+                    28297.0,
+                    27006.0,
+                    25555.0,
+                    25179.0
+                ],
+                "T units" : "F",
+                "E(T) units" : "ksi"
+            },
+            "thermal expansion coefficient table" : {
+                "T" : [
+                    69.8,
+                    300.2,
+                    548.6,
+                    613.4
+                ],
+                "alpha(T)" : [
+                    8.5e-6,
+                    9.0e-6,
+                    9.4444e-6,
+                    9.5556e-6
+                ],
+                "T units" : "F",
+                "alpha(T) units" : "1/F"
+            },
+            "poisson's ratio table" : {
+                "T" : [
+                    0.0,
+                    1.0e3
+                ],
+                "nu(T)" : [
+                    0.3,
+                    0.3
+                ],
+                "T units" : "F"
+            }
+        }
+    },
+    "analysis options" : {
+        "stress-free temperature" : "488.0 F",
+        "crack-face pressure loading" : true,
+        "axial residual stresses in weld" : true,
+        "circumferential residual stresses in weld" : true
+    },
+    "transients" : {
+        "total time" : "50.0 m",
+        "dt" : "1.0 m",
+        "transient list" : [
+            {
+                "pfm transient number" : 1,
+                "thermal-hydraulic sequence number" : 1,
+                "convective heat transfer coefficient history table" : {
+                    "t" : [
+                        0.0,
+                        1.67,
+                        2.5,
+                        2.92,
+                        3.83,
+                        5.0,
+                        10.97,
+                        11.0,
+                        11.5,
+                        15.0,
+                        16.67,
+                        50.0
+                    ],
+                    "h(t)" : [
+                        24319.32,
+                        14344.88,
+                        8282.67,
+                        2502.42,
+                        546.3,
+                        588.6,
+                        413.08,
+                        1896.2,
+                        863.51,
+                        715.48,
+                        715.48,
+                        715.48
+                    ],
+                    "t units" : "m",
+                    "h(t) units" : "BTU/(hr ft^2 F)"
+                },
+                "coolant temperature history table" : {
+                    "t" : [
+                        0.0,
+                        0.7,
+                        2.28,
+                        3.33,
+                        5.0,
+                        6.67,
+                        8.33,
+                        13.33,
+                        15.0,
+                        25.0,
+                        50.0
+                    ],
+                    "T(t)" : [
+                        543.2,
+                        564.8,
+                        557.6,
+                        428.0,
+                        284.0,
+                        199.4,
+                        140.0,
+                        68.0,
+                        59.0,
+                        45.5,
+                        45.5
+                    ],
+                    "t units" : "m",
+                    "T(t) units" : "F"
+                },
+                "pressure history table" : {
+                    "t" : [
+                        0.0,
+                        0.75,
+                        0.93,
+                        1.42,
+                        10.0,
+                        50.0
+                    ],
+                    "P(t)" : [
+                        2.2772,
+                        1.5781,
+                        1.2445,
+                        1.1618,
+                        0.8152,
+                        0.3192
+                    ],
+                    "t units" : "m",
+                    "P(t) units" : "ksi"
+                }
+            }
+        ]
+    }
+}
+

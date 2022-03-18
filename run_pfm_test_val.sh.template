@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -ex
+
+rm -f PFM_test_val_@case_num@.out
+$1 < PFM_test_val_@case_num@.cmd
+grep -v DATE PFM_test_val_@case_num@.out.orig > PFM_test_val_@case_num@.without_date.out.orig
+grep -v DATE PFM_test_val_@case_num@.out > PFM_test_val_@case_num@.without_date.out
+numdiff -r 0.05 PFM_test_val_@case_num@.without_date.out.orig PFM_test_val_@case_num@.without_date.out
+mv INITIATE.DAT PFM_test_val_@case_num@_INITIATE.DAT
+mv FAILURE.DAT PFM_test_val_@case_num@_FAILURE.DAT

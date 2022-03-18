@@ -1,0 +1,10 @@
+{
+  "deterministic profile" : {
+    "weld residual stress" : false,
+    "flaw kind" : "embedded",
+    "flaw orientation" : "Circumferential",
+    "profile time" : "10.0 m",
+    "aspect ratio" : 6.0,
+    "RPV ID to crack tip" : "0.3 in"
+  }
+}

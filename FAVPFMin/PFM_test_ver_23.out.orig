@@ -1,0 +1,164 @@
+
+
+               ************************************************
+               *                                              *
+               *                WELCOME TO FAVPRO             *
+               *                                              *
+               *  FRACTURE ANALYSIS OF VESSELS: PROBABILISTIC *
+               *                 VERSION 0.1.0                *
+               *                                              *
+               *         INCLUDES AS-FOUND FLAW OPTION        *
+               *                                              *
+               *     FAVPFM MODULE: PERFORMS PROBABILISTIC    *
+               *          FRACTURE MECHANICS ANALYSES         *
+               *                                              *
+               *     PROBLEMS OR QUESTIONS REGARDING FAVOR    *
+               *              SHOULD BE DIRECTED TO:          *
+               *                                              *
+               *               PATRICK RAYNAUD                *
+               *  UNITED STATES NUCLEAR REGULATORY COMMISSION *
+               *     Office of Nuclear Regulatory Research    *
+               *                                              *
+               *         e-mail: patrick.raynaud@nrc.gov      *
+               *              phone: (301) 415-1987           *
+               *                                              *
+               ************************************************
+
+          ***********************************************************
+          * This computer program was prepared as an account of     *
+          * work sponsored by the United States Government          *
+          * Neither the United States, nor the United States        *
+          * Department of Energy, nor the United States Nuclear     *
+          * Regulatory Commission, nor any of their employees,      *
+          * nor any of their contractors, subcontractors, or their  *
+          * employees, makes any warranty, express or implied, or   *
+          * assumes any legal liability or responsibility for the   *
+          * accuracy, completeness, or usefulness of any            *
+          * information, apparatus, product, or process disclosed,  *
+          * or represents that its use would not infringe           *
+          * privately-owned rights.                                 *
+          *                                                         *
+          ***********************************************************
+
+
+
+               DATE: 17-Mar-2022  TIME: 16:55:26
+
+
+
+               FAVPFM INPUT FILE NAME       = PFM_test_ver_23.in                                              
+               FAVLOAD OUTPUT FILE NAME     = ../FAVLOADin/LOAD_test_val_7.out                                
+               FAVPFM OUTPUT FILE NAME      = PFM_test_ver_23.out                                             
+               FAVPFM INPUT ECHO FILE NAME  = PFM_test_ver_23.echo                                            
+
+
+
+ NUMBER OF TIME STEPS IN FAVLoad FILE   =   251
+
+ NUMBER OF IGA TRIALS PER FLAW          =   100
+ FLOW STRESS - USED IN FAILURE ANALYSIS =  80.0 ksi
+ Maximum value used for KIc and KIa     = 200.0 ksi-in^1/2
+ KIc/KIa cap not used if ductile-tearing model is invoked.
+
+ Stochastic model for crack arrest KIa  =     1
+ where
+   1 = model based on high-constraint CCA specimens
+   2 = model based on CCA and large-specimen data
+   KIa model set to 2 if ductile-tearing model is invoked.
+
+ Radiation embrittlement correlation    =   992
+ where
+     992 = Regulatory Guide 1.99, revision 2
+    2000 = Eason 2000
+    2006 = Eason 2006
+   20071 = EricksonKirk 2007
+   20072 = RADAMO 2007
+   20073 = Combined EricksonKirk 2007 + RADAMO 2007
+
+ Steady-state cooling water temperature  =  550. degrees F
+
+ Effective full-power years of operation =   72.
+
+ 
+ DEFINITION OF STANDARD DEVIATIONS FOR SIMULATING
+ THE FOLLOWING PARAMETERS 
+ 
+ SURFACE NEUTRON FLUENCE - GLOBAL =   0.118* BEST ESTIMATE VALUE
+ SURFACE NEUTRON FLUENCE - LOCAL  =   0.056* BEST ESTIMATE VALUE
+ COPPER      - WELD   =       0.167 wt %
+ COPPER      - PLATE  =      0.0073 wt %
+ NICKEL      - WELD   =      0.1620 wt %
+ NICKEL      - PLATE  =      0.0244 wt %
+ PHOSPHORUS  - WELD   =      0.0013 wt %
+ PHOSPHORUS  - PLATE  =      0.0013 wt %
+ 
+ NUMBER OF VESSEL SUBREGIONS:    WELD=    7 PLATE=    6 TOTAL=   13
+ NUMBER OF VESSEL MAJOR REGIONS: WELD=    7 PLATE=    6 TOTAL=   13
+ 
+       AS-FOUND FLAW CHARACTERIZATION DATASET FILE NAME = ../FlawFiles/AFF54.dat                                          
+
+                         =============================================================
+                         *           Characteristics of As-Found Flaws               *
+                         * and deterministic minimization solutions for transient  1 *
+                         *          Model Includes Warm Prestress Option  1           *
+                         =============================================================
+
+                       Flaw    Flaw      Depth   Crack tip  Aspect  Flaw    Sub    RTcrit
+                       ID#     KIND      (inch)    (inch)    ratio  ORNT   region    F
+                         5      2        0.263      1.697     2.74    1       9    129.74
+                       105      2        0.087      3.107     2.40    1       8 Cannot Fail
+                       205      2        0.175      2.771     1.04    1       5 Cannot Fail
+                       305      2        0.350      0.280     1.75    1      12    112.65
+                       405      2        0.175      0.813     2.42    1       5    147.32
+                       505      2        0.175      2.519     6.47    1       1    168.95
+                       605      2        0.263      1.919     5.99    1       4    127.76
+                       705      2        0.087      1.688     4.07    2       7 Cannot Fail
+                       805      2        0.175      0.889     2.46    2       8 Cannot Fail
+                       905      2        0.613      1.909     2.25    1      12     92.83
+                      1005      2        0.175      2.369     1.47    2       7 Cannot Fail
+                      1105      2        0.350      1.591    17.40    2      11 Cannot Fail
+                      1205      2        0.087      0.402     8.93    2       7 Cannot Fail
+                      1305      1        1.575      1.575     6.00    2      12     66.05
+                      1405      2        0.087      1.608     5.50    1       6 Cannot Fail
+                      1505      2        0.087      2.251     1.58    1       6 Cannot Fail
+                      1605      2        0.175      3.110     4.74    1       4    173.59
+                      1705      2        0.087      2.264     3.53    2      12 Cannot Fail
+                      1805      2        0.087      1.636     7.26    2       7 Cannot Fail
+                      1905      2        0.175      3.104     1.50    2      11 Cannot Fail
+                      2005      2        0.087      1.785     1.15    1       6 Cannot Fail
+                      2105      2        0.087      0.674     1.46    1      12 Cannot Fail
+                      2205      2        0.087      1.970     7.19    1       2 Cannot Fail
+                      2305      2        0.087      1.703     5.19    1       8 Cannot Fail
+                      2405      2        0.087      1.847    19.95    2       7 Cannot Fail
+                      2505      2        0.175      0.952    10.86    1      10    137.75
+                      2605      2        0.263      0.315     1.12    2       7 Cannot Fail
+                      2705      2        0.175      3.104     4.33    2       7 Cannot Fail
+                      2805      2        0.087      0.702     3.56    2       9 Cannot Fail
+                      2905      2        0.087      1.448     4.34    2       7 Cannot Fail
+                      3005      2        0.087      2.232     4.23    2       7 Cannot Fail
+                      3105      2        0.087      2.389     1.47    1      10 Cannot Fail
+                      3205      2        0.087      1.656     4.28    2       7 Cannot Fail
+                      3305      2        0.175      1.392     1.48    1       2    215.37
+                      3405      1        0.263      0.263     2.00    2      12    201.14
+                      3505      2        0.087      0.416     9.51    2      12 Cannot Fail
+                      3605      2        0.263      0.580     4.55    1       8    113.95
+                      3705      2        0.087      2.702     1.28    1      11 Cannot Fail
+                      3805      2        0.175      3.280    16.77    1       4    161.06
+                      3905      2        0.263      0.646     1.60    2       7 Cannot Fail
+                      4005      2        0.175      3.327     1.35    2       8 Cannot Fail
+                      4105      2        0.525      1.731     5.14    2       8    190.88
+                      4205      2        0.087      1.138    18.42    2       7 Cannot Fail
+                      4305      2        0.175      1.775    19.20    2      10 Cannot Fail
+                      4405      2        0.087      3.017     9.81    2       7 Cannot Fail
+                      4505      2        0.087      3.372     8.55    1      11 Cannot Fail
+                      4605      2        0.438      3.154    11.81    1      10     98.34
+                      4705      2        0.087      2.242     6.47    1       1 Cannot Fail
+                      4805      2        0.087      1.233     2.88    2       7 Cannot Fail
+                      4905      2        0.087      1.611     5.76    2       7 Cannot Fail
+                      5005      2        0.175      2.718     1.90    2      10 Cannot Fail
+                      5105      2        0.087      3.329     5.01    2       7 Cannot Fail
+                      5205      2        0.350      2.482     1.66    2       7 Cannot Fail
+                      6000      1        0.700      0.700    99.00    1       1     30.93
+
+               DATE: 17-Mar-2022  TIME: 16:55:26
+

@@ -1,0 +1,655 @@
+
+
+               ************************************************
+               *                                              *
+               *               WELCOME TO FAVPRO              *
+               *                                              *
+               *  FRACTURE ANALYSIS OF VESSELS: PROBABILISTIC *
+               *                 VERSION 0.1.0                *
+               *                                              *
+               *     FAVPOST MODULE: POSTPROCESSOR MODULE     *
+               *  COMBINES TRANSIENT INITIAITING FREQUENCIES  *
+               *        WITH RESULTS OF PFM ANALYSIS          *
+               *                                              *
+               *     PROBLEMS OR QUESTIONS REGARDING FAVPRO   *
+               *             SHOULD BE DIRECTED TO            *
+               *                                              *
+               *                PATRICK RAYNAUD               *
+               *        NUCLEAR REGULATORY COMMISSION         *
+               *                                              *
+               *          e-mail: patrick.raynaud@nrc.gov     *
+               *                                              *
+               ************************************************
+
+          ***********************************************************
+          * This computer program was prepared as an account of     *
+          * work sponsored by the United States Government          *
+          * Neither the United States, nor the United States        *
+          * Department of Energy, nor the United States Nuclear     *
+          * Regulatory Commission, nor any of their employees,      *
+          * nor any of their contractors, subcontractors, or their  *
+          * employees, makes any warranty, express or implied, or   *
+          * assumes any legal liability or responsibility for the   *
+          * accuracy, completeness, or usefulness of any            *
+          * information, apparatus, product, or process disclosed,  *
+          * or represents that its use would not infringe           *
+          * privately-owned rights.                                 *
+          ***********************************************************
+
+
+
+
+
+               DATE: 17-Mar-2022  TIME: 17:06:49
+
+
+
+                Begin echo of FAVPost input data deck          17:06:49   17-Mar-2022
+
+ no./col. 1.......10........20........30........40........50........60........70........80
+     1    ********************************************************************************
+     2    * ====================                                                         *
+     3    * Record CNTL                                                                  *
+     4    * ====================                                                         *
+     5    *------------------------------------------------------------------------------*
+     6    * NTRAN = NUMBER OF T-H TRANSIENTS                                             *
+     7    *------------------------------------------------------------------------------*
+     8    ********************************************************************************
+     9    CNTL NTRAN=6
+    10    ********************************************************************************
+    11    * ====================                                                         *
+    12    * Record ITRN                                                                  *
+    13    * ====================                                                         *
+    14    *------------------------------------------------------------------------------*
+    15    * ITRAN = TRANSIENT NUMBER [-]                                                 *
+    16    * NHIST = NUMBER OF DATA PAIRS IN DISCRETE FREQUENCY DISTRIBUTION [-]          *
+    17    * ISEQ = THERMAL-HYDRAULIC SEQUENCE NUMBER [-]                                 *
+    18    *------------------------------------------------------------------------------*
+    19    ********************************************************************************
+    20    ITRN ITRAN=1 NHIST=20 ISEQ=16
+    21    *------------------------------
+    22    * freq[events/year] Density [%]
+    23    *------------------------------
+    24      0.000000179      0.5
+    25      0.000000207      0.5
+    26      0.000000512      1.5
+    27       0.00000111      2.5
+    28        0.0000024        5
+    29       0.00000464       10
+    30       0.00000663        5
+    31       0.00000938        5
+    32        0.0000157       10
+    33        0.0000249       10
+    34        0.0000407       10
+    35        0.0000657       10
+    36        0.0000914        5
+    37          0.00012        5
+    38         0.000269       10
+    39         0.000542        5
+    40         0.000914      2.5
+    41          0.00166      1.5
+    42          0.00268      0.5
+    43          0.00543      0.5
+    44    ********************************************************************************
+    45    * ====================                                                         *
+    46    * Record ITRN                                                                  *
+    47    * ====================                                                         *
+    48    *------------------------------------------------------------------------------*
+    49    * ITRAN = TRANSIENT NUMBER [-]                                                 *
+    50    * NHIST = NUMBER OF DATA PAIRS IN DISCRETE FREQUENCY DISTRIBUTION [-]          *
+    51    * ISEQ = THERMAL-HYDRAULIC SEQUENCE NUMBER [-]                                 *
+    52    *------------------------------------------------------------------------------*
+    53    ********************************************************************************
+    54    ITRN ITRAN=2 NHIST=20 ISEQ=19
+    55    *------------------------------
+    56    * freq[events/year] Density [%]
+    57    *------------------------------
+    58       0.00000544      0.5
+    59       0.00000642      0.5
+    60        0.0000159      1.5
+    61        0.0000307      2.5
+    62        0.0000551        5
+    63         0.000111       10
+    64         0.000158        5
+    65         0.000196        5
+    66         0.000293       10
+    67         0.000497       10
+    68         0.000786       10
+    69          0.00133       10
+    70          0.00179        5
+    71          0.00237        5
+    72          0.00548       10
+    73          0.00959        5
+    74           0.0168      2.5
+    75           0.0257      1.5
+    76           0.0466      0.5
+    77            0.116      0.5
+    78    ********************************************************************************
+    79    * ====================                                                         *
+    80    * Record ITRN                                                                  *
+    81    * ====================                                                         *
+    82    *------------------------------------------------------------------------------*
+    83    * ITRAN = TRANSIENT NUMBER [-]                                                 *
+    84    * NHIST = NUMBER OF DATA PAIRS IN DISCRETE FREQUENCY DISTRIBUTION [-]          *
+    85    * ISEQ = THERMAL-HYDRAULIC SEQUENCE NUMBER [-]                                 *
+    86    *------------------------------------------------------------------------------*
+    87    ********************************************************************************
+    88    ITRN ITRAN=3 NHIST=20 ISEQ=24
+    89    *------------------------------
+    90    * freq[events/year] Density [%]
+    91    *------------------------------
+    92       0.00000001      0.5
+    93      0.000000012      0.5
+    94      0.000000019      1.5
+    95     0.0000000298      2.5
+    96     0.0000000458        5
+    97      0.000000191       10
+    98      0.000000279        5
+    99      0.000000328        5
+   100      0.000000428       10
+   101      0.000000591       10
+   102       0.00000103       10
+   103       0.00000146       10
+   104       0.00000186        5
+   105       0.00000265        5
+   106        0.0000056       10
+   107        0.0000143        5
+   108        0.0000192      2.5
+   109        0.0000254      1.5
+   110        0.0000277      0.5
+   111         0.000042      0.5
+   112    ********************************************************************************
+   113    * ====================                                                         *
+   114    * Record ITRN                                                                  *
+   115    * ====================                                                         *
+   116    *------------------------------------------------------------------------------*
+   117    * ITRAN = TRANSIENT NUMBER [-]                                                 *
+   118    * NHIST = NUMBER OF DATA PAIRS IN DISCRETE FREQUENCY DISTRIBUTION [-]          *
+   119    * ISEQ = THERMAL-HYDRAULIC SEQUENCE NUMBER [-]                                 *
+   120    *------------------------------------------------------------------------------*
+   121    ********************************************************************************
+   122    ITRN ITRAN=4 NHIST=20 ISEQ=34
+   123    *------------------------------
+   124    * freq[events/year] Density [%]
+   125    *------------------------------
+   126       0.00000507      0.5
+   127       0.00000596      0.5
+   128        0.0000068      1.5
+   129       0.00000775      2.5
+   130       0.00000861        5
+   131        0.0000102       10
+   132        0.0000107        5
+   133        0.0000113        5
+   134        0.0000124       10
+   135        0.0000136       10
+   136         0.000015       10
+   137        0.0000164       10
+   138        0.0000177        5
+   139        0.0000187        5
+   140        0.0000222       10
+   141        0.0000245        5
+   142        0.0000291      2.5
+   143        0.0000344      1.5
+   144        0.0000394      0.5
+   145        0.0000727      0.5
+   146    ********************************************************************************
+   147    * ====================                                                         *
+   148    * Record ITRN                                                                  *
+   149    * ====================                                                         *
+   150    *------------------------------------------------------------------------------*
+   151    * ITRAN = TRANSIENT NUMBER [-]                                                 *
+   152    * NHIST = NUMBER OF DATA PAIRS IN DISCRETE FREQUENCY DISTRIBUTION [-]          *
+   153    * ISEQ = THERMAL-HYDRAULIC SEQUENCE NUMBER [-]                                 *
+   154    *------------------------------------------------------------------------------*
+   155    ********************************************************************************
+   156    ITRN ITRAN=5 NHIST=20 ISEQ=40
+   157    *------------------------------
+   158    * freq[events/year] Density [%]
+   159    *------------------------------
+   160       0.00000127      0.5
+   161       0.00000166      0.5
+   162       0.00000214      1.5
+   163       0.00000305      2.5
+   164       0.00000445        5
+   165       0.00000651       10
+   166       0.00000803        5
+   167       0.00000934        5
+   168        0.0000124       10
+   169        0.0000159       10
+   170        0.0000209       10
+   171        0.0000281       10
+   172        0.0000331        5
+   173        0.0000411        5
+   174        0.0000689       10
+   175         0.000109        5
+   176         0.000174      2.5
+   177         0.000282      1.5
+   178          0.00039      0.5
+   179           0.0009      0.5
+   180    ********************************************************************************
+   181    * ====================                                                         *
+   182    * Record ITRN                                                                  *
+   183    * ====================                                                         *
+   184    *------------------------------------------------------------------------------*
+   185    * ITRAN = TRANSIENT NUMBER [-]                                                 *
+   186    * NHIST = NUMBER OF DATA PAIRS IN DISCRETE FREQUENCY DISTRIBUTION [-]          *
+   187    * ISEQ = THERMAL-HYDRAULIC SEQUENCE NUMBER [-]                                 *
+   188    *------------------------------------------------------------------------------*
+   189    ********************************************************************************
+   190    ITRN ITRAN=6 NHIST=20 ISEQ=48
+   191    *------------------------------
+   192    * freq[events/year] Density [%]
+   193    *------------------------------
+   194      0.000000179      0.5
+   195      0.000000218      0.5
+   196      0.000000275      1.5
+   197      0.000000325      2.5
+   198      0.000000396        5
+   199      0.000000493       10
+   200      0.000000534        5
+   201      0.000000573        5
+   202      0.000000647       10
+   203      0.000000723       10
+   204      0.000000805       10
+   205      0.000000898       10
+   206      0.000000954        5
+   207       0.00000102        5
+   208        0.0000012       10
+   209       0.00000136        5
+   210       0.00000152      2.5
+   211       0.00000171      1.5
+   212       0.00000189      0.5
+   213       0.00000219      0.5
+ no./col. 1.......10........20........30........40........50........60........70........80
+
+                End echo of FAVPost input data deck          17:06:49   17-Mar-2022
+
+
+               FAVPOST INPUT  FILE NAME                  =               POST_test_ver_2.in
+               FAVPFM  OUTPUT FILE CONTAINING PFMI ARRAY = ../FAVPFMin/PFM_test_ver_13_INIT
+               FAVPFM  OUTPUT FILE CONTAINING PFMF ARRAY = ../FAVPFMin/PFM_test_ver_13_FAIL
+               FAVPOST OUTPUT FILE NAME                  =              POST_test_ver_2.out
+
+
+                  **********************************
+                  * NUMBER OF SIMULATIONS =    100 *
+                  **********************************
+
+___________________________________________________________________________________________________
+                  CONDITIONAL PROBABILITY                    CONDITIONAL PROBABILITY
+                  OF INITIATION CPI=P(I|E)                    OF FAILURE CPF=P(F|E)
+ TRANSIENT   MEAN          95th %        99th %        MEAN          95th %        99th %    RATIO
+  NUMBER      CPI           CPI           CPI           CPF           CPF           CPF   CPFmn/CPImn
+         |--------------------------------------|  |--------------------------------------|
+    16    0.0000E+00    0.0000E+00    0.0000E+00    0.0000E+00    0.0000E+00    0.0000E+00  0.0000
+    19    1.1783E-04    8.1676E-04    2.7132E-03    1.0745E-04    7.4479E-04    2.4741E-03  0.9119
+    24    1.3428E-05    9.3073E-05    3.0918E-04    6.5015E-07    4.5065E-06    1.4970E-05  0.0484
+    34    2.6459E-04    1.8340E-03    6.0924E-03    1.0415E-04    7.2194E-04    2.3982E-03  0.3936
+    40    1.0610E-01    5.3668E-01    1.1565E+00    8.6659E-03    6.1621E-02    1.6960E-01  0.0817
+    48    4.2902E-02    2.1568E-01    4.4483E-01    4.2155E-02    2.1505E-01    4.4286E-01  0.9826
+___________________________________________________________________________________________________
+
+         NOTES: CPI IS CONDITIONAL PROBABILITY OF CRACK INITIATION, P(I|E)
+                CPF IS CONDITIONAL PROBABILITY OF TWC FAILURE, P(F|E)
+
+
+             ***********************************************************
+             *      PROBABILITY DISTRIBUTION FUNCTION (HISTOGRAM)      *
+             *         FOR THE FREQUENCY OF CRACK INITIATION           *
+             ***********************************************************
+                      FREQUENCY OF         RELATIVE    CUMULATIVE
+                    CRACK INITIATION       DENSITY     DISTRIBUTION
+               (PER REACTOR-OPERATING YEAR)  (%)          (%)
+                       0.0000E+00          1.0000        1.0000
+                       7.4543E-06         93.0000       86.4350
+                       2.2363E-05          4.0000       95.7742
+                       5.2180E-05          2.0000       99.3794
+
+
+                       =============================================
+                       ==      Summary Descriptive Statistics     ==
+                       =============================================
+
+                       Minimum                           = 0.0000E+00
+                       Maximum                           = 4.9200E-05
+                       Range                             = 4.9200E-05
+
+                       Number of Simulations             =    100
+
+                       5th Percentile                    = 1.6110E-11
+                       Median                            = 3.1874E-07
+                       95.0th Percentile                 = 1.9748E-05
+                       99.0th Percentile                 = 4.4764E-05
+                       99.9th Percentile                 = 8.0554E-05
+
+                       Mean                              = 3.3527E-06
+                       Standard Deviation                = 8.3382E-06
+                       Standard Error                    = 8.3382E-07
+                       Variance (unbiased)               = 6.9525E-11
+                       Variance (biased)                 = 6.8830E-11
+                       Moment Coeff. of Skewness         = 3.8002E+00
+                       Pearson's 2nd Coeff. of Skewness  = 1.0916E+00
+                       Kurtosis                          = 1.8801E+01
+
+
+
+             ***********************************************************
+             *      PROBABILITY DISTRIBUTION FUNCTION (HISTOGRAM)      *
+             *      FOR THROUGH-WALL CRACKING FREQUENCY (FAILURE)      *
+             ***********************************************************
+                      FREQUENCY OF         RELATIVE    CUMULATIVE
+                      TWC FAILURES         DENSITY    DISTRIBUTION
+               (PER REACTOR-OPERATING YEAR)  (%)          (%)
+                       0.0000E+00          4.0000        4.0000
+                       3.6766E-07         90.0000       90.4803
+                       1.1030E-06          1.0000       92.4971
+                       4.0443E-06          1.0000       97.1050
+                       4.7796E-06          1.0000       97.7183
+                       5.5149E-06          1.0000       98.2017
+                       6.2503E-06          1.0000       98.5827
+                       9.1915E-06          1.0000       99.4531
+
+
+                       =============================================
+                       ==      Summary Descriptive Statistics     ==
+                       =============================================
+
+                       Minimum                           = 0.0000E+00
+                       Maximum                           = 9.5505E-06
+                       Range                             = 9.5505E-06
+
+                       Number of Simulations             =    100
+
+                       5th Percentile                    = 2.8979E-14
+                       Median                            = 7.9571E-09
+                       95.0th Percentile                 = 2.3565E-06
+                       99.0th Percentile                 = 7.3275E-06
+                       99.9th Percentile                 = 1.4439E-05
+
+                       Mean                              = 3.5300E-07
+                       Standard Deviation                = 1.3708E-06
+                       Standard Error                    = 1.3708E-07
+                       Variance (unbiased)               = 1.8791E-12
+                       Variance (biased)                 = 1.8603E-12
+                       Moment Coeff. of Skewness         = 4.8493E+00
+                       Pearson's 2nd Coeff. of Skewness  = 7.5513E-01
+                       Kurtosis                          = 2.7456E+01
+
+
+
+             ***********************************************************
+             *  FRACTIONALIZATION OF FREQUENCY OF CRACK INITIATION     *
+             *      AND THROUGH-WALL CRACKING FREQUENCY (FAILURE) -    *
+             *       WEIGHTED BY TRANSIENT INITIATING FREQUENCIES      *
+             ***********************************************************
+                                    % of total         % of total
+                                   frequency of       frequency of
+                                 crack initiation    of TWC failure
+                        16            0.00                 0.00
+                        19            2.04                17.92
+                        24            0.00                 0.00
+                        34            0.09                 0.22
+                        40           96.89                72.69
+                        48            0.98                 9.17
+                            TOTALS  100.00               100.00
+
+
+
+         ***********************************************************
+         *    FRACTIONALIZATION OF FREQUENCY OF CRACK INITIATION   *
+         *      AND THROUGH-WALL CRACKING FREQUENCY (FAILURE) -    *
+         *                         BY                              *
+         *               RPV BELTLINE MAJOR REGION                 *
+         *                   BY PARENT SUBREGION                   *
+         *                                                         *
+         *       WEIGHTED BY % CONTRIBUTION OF EACH TRANSIENT      *
+         *          TO FREQUENCY OF CRACK INITIATION AND           *
+         *        THROUGH-WALL CRACKING FREQUENCY (FAILURE)        *
+         ***********************************************************
+                                                      % of total
+                      % of      % of total        through-wall crack
+     MAJOR    RTndt   total    frequency of            frequency
+     REGION   (MAX)   flaws  crack initiation  cleavage ductile  total
+        1    328.47   1.63         0.30          1.82     0.31     2.14
+        2    328.47   1.63         0.02          0.12     0.02     0.15
+        3    316.80   1.63        10.64         32.85    14.77    47.62
+        4    316.40   0.97         2.16          1.08     1.63     2.71
+        5    327.79   0.97         0.77          3.49     1.51     5.01
+        6    327.79   0.97        13.57         11.95    15.93    27.88
+        7    332.43  11.20        26.75          0.15     0.00     0.15
+        8    234.09  16.90        12.08          1.17     0.01     1.17
+        9    261.18  16.90        24.28          4.84     1.56     6.40
+       10    232.00  16.90         8.79          4.92     1.07     5.99
+       11    185.37  10.10         0.00          0.04     0.00     0.04
+       12    218.54  10.10         0.64          0.52     0.21     0.73
+       13    143.02  10.10         0.00          0.00     0.00     0.00
+             TOTALS 100.00       100.00         62.97    37.03   100.00
+
+
+
+         ***********************************************************
+         *    FRACTIONALIZATION OF FREQUENCY OF CRACK INITIATION   *
+         *      AND THROUGH-WALL CRACKING FREQUENCY (FAILURE) -    *
+         *                         BY                              *
+         *               RPV BELTLINE MAJOR REGION                 *
+         *                   BY CHILD SUBREGION                    *
+         *                                                         *
+         *       WEIGHTED BY % CONTRIBUTION OF EACH TRANSIENT      *
+         *           TO FREQUENCY OF CRACK INITIATION AND          *
+         *        THROUGH-WALL CRACKING FREQUENCY (FAILURE)        *
+         ***********************************************************
+                                                      % of total
+                      % of      % of total        through-wall crack
+     MAJOR    RTndt   total    frequency of            frequency
+     REGION   (MAX)   flaws  crack initiation  cleavage ductile  total
+        1    328.47   1.63         0.30          1.82     0.31     2.14
+        2    328.47   1.63         0.02          0.12     0.02     0.15
+        3    316.80   1.63        10.64         32.85    14.77    47.62
+        4    316.40   0.97         2.16          1.08     1.63     2.71
+        5    327.79   0.97         0.77          3.49     1.51     5.01
+        6    327.79   0.97        13.57         11.95    15.93    27.88
+        7    332.43  11.20        26.75          0.15     0.00     0.15
+        8    234.09  16.90        12.08          1.17     0.01     1.17
+        9    261.18  16.90        24.28          4.84     1.56     6.40
+       10    232.00  16.90         8.79          4.92     1.07     5.99
+       11    185.37  10.10         0.00          0.04     0.00     0.04
+       12    218.54  10.10         0.64          0.52     0.21     0.73
+       13    143.02  10.10         0.00          0.00     0.00     0.00
+             TOTALS 100.00       100.00         62.97    37.03   100.00
+
+
+
+            ***********************************************************
+            *    FRACTIONALIZATION OF FREQUENCY OF CRACK INITIATION   *
+            *      AND THROUGH-WALL CRACKING FREQUENCY (FAILURE) -    *
+            *         MATERIAL, FLAW CATEGORY, AND FLAW DEPTH         *
+            *                                                         *
+            *       WEIGHTED BY % CONTRIBUTION OF EACH TRANSIENT      *
+            *           TO FREQUENCY OF CRACK INITIATION AND          *
+            *        THROUGH-WALL CRACKING FREQUENCY (FAILURE)        *
+            ***********************************************************
+
+                                    *****************
+                                    * WELD MATERIAL *
+                                    *****************
+
+                       % of total frequency      % of total through-wall
+                        of crack initiation          crack frequency    
+             FLAW 
+             DEPTH    CAT I    CAT 2    CAT 3    CAT 1    CAT 2   CAT 3
+             (in)     flaws    flaws    flaws    flaws    flaws   flaws
+             0.088     0.00     0.00     0.00     0.00     0.00     0.00
+             0.175     0.00     0.00     0.00     0.00     0.00     0.00
+             0.263     0.00     0.09     0.00     0.00     0.26     0.00
+             0.350     0.00     0.00     0.00     0.00     0.01     0.00
+             0.438     0.00     0.78     0.00     0.00     4.70     0.00
+             0.525     0.00     7.40     0.00     0.00    18.56     0.00
+             0.613     0.00     0.20     0.00     0.00     0.04     0.00
+             0.700     0.00     0.19     0.00     0.00     0.02     0.00
+             0.787     6.14     1.19     0.00     0.09     0.04     0.00
+             0.875     0.00     2.64     0.00     0.00     2.84     0.01
+             0.963     0.00     0.64     0.00     0.00     1.96     0.00
+             1.050     0.00     5.81     0.01     0.00    35.96     0.06
+             1.137     0.00     6.09     0.09     0.00     1.15     0.70
+             1.225     0.00    12.85     0.00     0.00     9.09     0.00
+             1.312     0.00    10.02     0.09     0.00     9.27     0.90
+            TOTALS     6.14    47.90     0.19     0.09    83.89     1.67
+
+                                    ******************
+                                    * PLATE MATERIAL *
+                                    ******************
+
+                       % of total frequency      % of total through-wall
+                        of crack initiation          crack frequency    
+             FLAW 
+             DEPTH    CAT I    CAT 2    CAT 3    CAT 1    CAT 2   CAT 3
+             (in)     flaws    flaws    flaws    flaws    flaws   flaws
+             0.088     0.00     0.00     0.00     0.00     0.00     0.00
+             0.175     0.00     0.00     0.00     0.00     0.00     0.00
+             0.263     2.34     0.00     0.00     0.00     0.00     0.00
+             0.350     2.34     0.18     0.00     0.01     0.52     0.00
+             0.438     3.35     0.35     0.00     0.02     1.28     0.00
+             0.525     5.32     0.00     0.00     0.07     0.00     0.00
+             0.613     0.37     0.00     0.00     0.01     0.00     0.00
+             0.700     1.70     0.22     0.00     0.00     0.35     0.00
+             0.787     1.13     0.02     0.00     0.06     0.02     0.00
+             0.875     7.64     0.50     0.00     0.35     0.10     0.00
+             0.963     1.28     3.42     0.00     0.24     0.01     0.00
+             1.050     0.67     0.15     0.00     0.21     0.05     0.00
+             1.137     3.13     5.27     0.00     0.69     1.53     0.00
+             1.225     1.71     0.85     0.00     0.47     2.36     0.00
+             1.312     0.53     3.31     0.00     0.56     5.41     0.00
+            TOTALS    31.49    14.28     0.00     2.71    11.64     0.00
+
+
+
+            ***********************************************************
+            *    FRACTIONALIZATION OF FREQUENCY OF CRACK INITIATION   *
+            *      AND THROUGH-WALL CRACKING FREQUENCY (FAILURE) -    *
+            *         MATERIAL, FLAW CATEGORY, AND FLAW DEPTH         *
+            *                 (AXIAL ORIENTATION)                     *
+            *                                                         *
+            *       WEIGHTED BY % CONTRIBUTION OF EACH TRANSIENT      *
+            *           TO FREQUENCY OF CRACK INITIATION AND          *
+            *        THROUGH-WALL CRACKING FREQUENCY (FAILURE)        *
+            ***********************************************************
+
+                                    *****************
+                                    *   AXIAL WELD  *
+                                    *****************
+
+                       % of total frequency      % of total through-wall
+                        of crack initiation          crack frequency    
+             FLAW 
+             DEPTH    CAT I    CAT 2    CAT 3    CAT 1    CAT 2   CAT 3
+             (in)     flaws    flaws    flaws    flaws    flaws   flaws
+             0.088     0.00     0.00     0.00     0.00     0.00     0.00
+             0.175     0.00     0.00     0.00     0.00     0.00     0.00
+             0.263     0.00     0.08     0.00     0.00     0.26     0.00
+             0.350     0.00     0.00     0.00     0.00     0.01     0.00
+             0.438     0.00     0.72     0.00     0.00     4.70     0.00
+             0.525     0.00     5.62     0.00     0.00    18.56     0.00
+             0.613     0.00     0.01     0.00     0.00     0.04     0.00
+             0.700     0.00     0.00     0.00     0.00     0.01     0.00
+             0.787     0.00     0.01     0.00     0.00     0.04     0.00
+             0.875     0.00     2.19     0.00     0.00     2.84     0.01
+             0.963     0.00     0.52     0.00     0.00     1.95     0.00
+             1.050     0.00     5.81     0.01     0.00    35.96     0.06
+             1.137     0.00     0.20     0.09     0.00     1.15     0.70
+             1.225     0.00     4.19     0.00     0.00     9.08     0.00
+             1.312     0.00     1.78     0.09     0.00     9.14     0.90
+            TOTALS     0.00    21.14     0.19     0.00    83.74     1.67
+
+                                    ******************
+                                    *   AXIAL PLATE  *
+                                    ******************
+
+                       % of total frequency      % of total through-wall
+                        of crack initiation          crack frequency    
+             FLAW 
+             DEPTH    CAT I    CAT 2    CAT 3    CAT 1    CAT 2   CAT 3
+             (in)     flaws    flaws    flaws    flaws    flaws   flaws
+             0.088     0.00     0.00     0.00     0.00     0.00     0.00
+             0.175     0.00     0.00     0.00     0.00     0.00     0.00
+             0.263     0.00     0.00     0.00     0.00     0.00     0.00
+             0.350     0.00     0.18     0.00     0.00     0.52     0.00
+             0.438     0.00     0.35     0.00     0.00     1.28     0.00
+             0.525     0.00     0.00     0.00     0.00     0.00     0.00
+             0.613     0.00     0.00     0.00     0.00     0.00     0.00
+             0.700     0.00     0.22     0.00     0.00     0.35     0.00
+             0.787     0.00     0.01     0.00     0.00     0.02     0.00
+             0.875     0.00     0.05     0.00     0.00     0.10     0.00
+             0.963     0.00     0.00     0.00     0.00     0.01     0.00
+             1.050     0.00     0.01     0.00     0.00     0.05     0.00
+             1.137     0.00     0.49     0.00     0.00     1.53     0.00
+             1.225     0.00     0.72     0.00     0.00     2.36     0.00
+             1.312     0.00     2.40     0.00     0.00     5.41     0.00
+            TOTALS     0.00     4.44     0.00     0.00    11.64     0.00
+
+
+
+            ***********************************************************
+            *    FRACTIONALIZATION OF FREQUENCY OF CRACK INITIATION   *
+            *      AND THROUGH-WALL CRACKING FREQUENCY (FAILURE) -    *
+            *         MATERIAL, FLAW CATEGORY, AND FLAW DEPTH         *
+            *              (CIRCUMFERENTIAL ORIENTATION)              *
+            *                                                         *
+            *       WEIGHTED BY % CONTRIBUTION OF EACH TRANSIENT      *
+            *           TO FREQUENCY OF CRACK INITIATION AND          *
+            *        THROUGH-WALL CRACKING FREQUENCY (FAILURE)        *
+            ***********************************************************
+
+                                    *****************
+                                    *   CIRC. WELD  *
+                                    *****************
+
+                       % of total frequency      % of total through-wall
+                        of crack initiation          crack frequency    
+             FLAW 
+             DEPTH    CAT I    CAT 2    CAT 3    CAT 1    CAT 2   CAT 3
+             (in)     flaws    flaws    flaws    flaws    flaws   flaws
+             0.088     0.00     0.00     0.00     0.00     0.00     0.00
+             0.175     0.00     0.00     0.00     0.00     0.00     0.00
+             0.263     0.00     0.01     0.00     0.00     0.00     0.00
+             0.350     0.00     0.00     0.00     0.00     0.00     0.00
+             0.438     0.00     0.06     0.00     0.00     0.00     0.00
+             0.525     0.00     1.79     0.00     0.00     0.00     0.00
+             0.613     0.00     0.18     0.00     0.00     0.00     0.00
+             0.700     0.00     0.19     0.00     0.00     0.01     0.00
+             0.787     6.14     1.17     0.00     0.09     0.00     0.00
+             0.875     0.00     0.45     0.00     0.00     0.00     0.00
+             0.963     0.00     0.13     0.00     0.00     0.01     0.00
+             1.050     0.00     0.00     0.00     0.00     0.00     0.00
+             1.137     0.00     5.89     0.00     0.00     0.00     0.00
+             1.225     0.00     8.66     0.00     0.00     0.01     0.00
+             1.312     0.00     8.23     0.00     0.00     0.13     0.00
+            TOTALS     6.14    26.76     0.00     0.09     0.15     0.00
+
+                                    ******************
+                                    *   CIRC. PLATE  *
+                                    ******************
+
+                       % of total frequency      % of total through-wall
+                        of crack initiation          crack frequency    
+             FLAW 
+             DEPTH    CAT I    CAT 2    CAT 3    CAT 1    CAT 2   CAT 3
+             (in)     flaws    flaws    flaws    flaws    flaws   flaws
+             0.088     0.00     0.00     0.00     0.00     0.00     0.00
+             0.175     0.00     0.00     0.00     0.00     0.00     0.00
+             0.263     2.34     0.00     0.00     0.00     0.00     0.00
+             0.350     2.34     0.00     0.00     0.01     0.00     0.00
+             0.438     3.35     0.00     0.00     0.02     0.00     0.00
+             0.525     5.32     0.00     0.00     0.07     0.00     0.00
+             0.613     0.37     0.00     0.00     0.01     0.00     0.00
+             0.700     1.70     0.00     0.00     0.00     0.00     0.00
+             0.787     1.13     0.02     0.00     0.06     0.00     0.00
+             0.875     7.64     0.45     0.00     0.35     0.00     0.00
+             0.963     1.28     3.42     0.00     0.24     0.00     0.00
+             1.050     0.67     0.14     0.00     0.21     0.00     0.00
+             1.137     3.13     4.79     0.00     0.69     0.00     0.00
+             1.225     1.71     0.14     0.00     0.47     0.00     0.00
+             1.312     0.53     0.91     0.00     0.56     0.00     0.00
+            TOTALS    31.49     9.86     0.00     2.71     0.00     0.00
+
+                          DATE: 17-Mar-2022  TIME: 17:06:49
+

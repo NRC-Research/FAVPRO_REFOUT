@@ -1,0 +1,255 @@
+**********************************************************************************************************
+* ====================                                                                                   *
+* Control Record CNT1                                                                                    *
+* ====================                                                                                   *
+*--------------------------------------------------------------------------------------------------------*
+* NSIM = NUMBER OF RPV SIMULATIONS                                                                       *
+*--------------------------------------------------------------------------------------------------------*
+* IPFLAW         = FLAW POPULATION MODEL                                                                 *
+*                                                                                                        *
+* IPFLAW         = 1 Flaws located in inner half of vessel - primarily for cooldown transients.          *
+*                                                                                                        *
+*                    Surface flaws (in surface flaw characterization file) will be inner surface         *
+*                    breaking flaws. Embedded flaws (in weld and plate flaw characterization files)      *
+*                    limited to the inner 3/8 of the RPV wall thickness.                                 *
+*                                                                                                        *
+* IPFLAW         = 2 Flaws located in outer half of vessel - primarily for heat-up transients.           *
+*                                                                                                        *
+*                    Surface flaws (in surface flaw characterization file) will be outer surface         *
+*                    breaking flaws. Embedded flaws (in weld and plate flaw characterization files)      *
+*                    limited to the outer 3/8 of the RPV wall thickness.                                 *
+*                                                                                                        *
+* IPFLAW         = 3 The number of postulated surface breaking flaws (in surface flaw characterization   *
+*                    file) would be double that of options 1 and 2; evenly divided between internal      *
+*                    and external surface breaking flaws. All of the embedded flaws uniformly            *
+*                    distributed through the RPV wall thickness would be included in the model.          *
+*                                                                                                        *
+* See Theory Manual for further discussion.                                                              *
+*--------------------------------------------------------------------------------------------------------*
+* IGATR = NUMBER OF INITIATION-GROWTH-ARREST (IGA) TRIALS PER FLAW                                       *
+*--------------------------------------------------------------------------------------------------------*
+* WPS_OPTION     = 0 DO NOT INCLUDE WARM-PRESTRESSING IN ANALYSIS                                        *
+* WPS_OPTION     = 1 INCLUDE DEFAULT FAVOR BASELINE WARM-PRESTRESSING MODEL IN ANALYSIS                  *
+* WPS_OPTION     = 2 INCLUDE CONSERVATIVE WARM-PRESTRESSING MODEL IN ANALYSIS                            *
+* WPS_OPTION     = 3 INCLUDE BEST-ESTIMATE WARM-PRESTRESSING MODEL IN ANALYSIS                           *
+*                                                                                                        *
+* See Theory Manual for details regarding WARM_PRESTRESS Models                                          *
+* Note: Previous Versions of FAVOR prior to the 15.1 included only options 0 and 1.                      *
+*--------------------------------------------------------------------------------------------------------*
+* CHILD_OPTION   = 0 DO NOT INCLUDE CHILD SUBREGION REPORTS [-]                                          *
+* CHILD_OPTION   = 1 INCLUDE CHILD SUBREGION REPORTS [-]                                                 *
+*--------------------------------------------------------------------------------------------------------*
+* RESTART_OPTION = 0 THIS IS NOT A RESTART CASE [-]                                                      *
+* RESTART_OPTION = 1 THIS IS A RESTART CASE [-]                                                          *
+*--------------------------------------------------------------------------------------------------------*
+* =============================                                                                          *
+* Notes for Control Record CNT1                                                                          *
+* =============================                                                                          *
+* IN A TYPICAL PFM ANALYSIS, A SUBSTANTIAL FRACTION OF THE TOTAL FLAWS ARE CATEGORY 3 FLAWS IN           *
+* PLATE REGIONS. BASED ON EXPERIENCE AND SOME DETERMINISTIC FRACTURE ANALYSES, THESE FLAWS VERY          *
+* RARELY CONTRIBUTE TO THE CPI OR CPF WITH THE PLATE FLAW SIZE DISTRIBUTIONS TYPICALLY USED.             *
+* THEREFORE, INVOKING IP3OPT = 0 CAN RESULT IN A SIGNIFICANT REDUCTION IN EXECUTION TIME WITHOUT         *
+* AFFECTING THE SOLUTION, UNLESS THERE ARE UNUSUAL CIRCUMSTANCES SUCH AS A NEW FLAW-SIZE                 *
+* DISTRIBUTION FOR PLATE FLAWS. IN EITHER CASE, CATEGORY 3 PLATE FLAWS ARE INCLUDED IN ALL REPORTS.      *
+*                                                                                                        *
+* IF IPFLAW      = 3; THEN PC3_OPTION AUTOMATICALLY OVER-RIDES AND SETS PC3_OPTION = 1                   *
+*                                                                                                        *
+* Notes on Restart Option:                                                                               *
+*                                                                                                        *
+* The restart option flag can also be used to control the frequency with which restart files are         *
+* created. If RESTART_OPTION is given a value other than 0 or 1, then the absolute value of this flag    *
+* sets the checkpoint interval at which the restart file will be created during the run. For example,    *
+*                                                                                                        *
+* 1.RESTART_OPTION = -200 ==> This is not a restart case; restart files will be created every 200 trials *
+* 2.RESTART_OPTION =    0 ==> Same as example No. 1.                                                     *
+* 3.RESTART_OPTION =  200 ==> This is a restart case; restart files will be created every 200 trials.    *
+* 4.RESTART_OPTION =    1 ==> Same as example No. 3.                                                     *
+* 5.RESTART_OPTION =  -50 ==> This is not a restart case; restart files will be created every 50 trials. *
+*                                                                                                        *
+*--------------------------------------------------------------------------------------------------------*
+**********************************************************************************************************
+CNT1 NSIM=100 IPFLAW=2 IGATR=100 WPS_OPTION=3 PC3_OPTION=0 CHILD_OPTION=1 RESTART_OPTION=0
+**********************************************************************************************************
+* ====================                                                                                   *
+* Control Record CNT2                                                                                    *
+* ====================                                                                                   *
+*--------------------------------------------------------------------------------------------------------*
+* IRTNDT     = 992   ==> USE RG 1.99, REV 2, FOR ESTIMATING RADIATION SHIFT IN RTNDT                     *
+* IRTNDT     = 2000  ==> USE E2000 CORRELATION FOR ESTIMATING RADIATION SHIFT IN RTNDT                   *
+* IRTNDT     = 2006  ==> USE E2006 CORRELATION FOR ESTIMATING RADIATION SHIFT IN RTNDT                   *
+* IRTNDT     = 20071 ==> USE EricksonKirk 2007 CORRELATION FOR ESTIMATING RADIATION SHIFT IN RTNDT       *
+* IRTNDT     = 20072 ==> USE RADAMO CORRELATION FOR ESTIMATING RADIATION SHIFT IN RTNDT                  *
+* IRTNDT     = 20073 ==> USE COMBINED EricksonKirk 2007 + RADAMO CORRELATIONS FOR RADIATION SHIFT        *
+*--------------------------------------------------------------------------------------------------------*
+* TC         = INITIAL RPV COOLANT TEMPERATURE (applicable only when IRTNDT=2000 or 2006)            [F] *
+*--------------------------------------------------------------------------------------------------------*
+* EFPY       = EFFECTIVE FULL-POWER YEARS OF OPERATION                                           [YEARS] *
+*--------------------------------------------------------------------------------------------------------*
+* IDT_OPTION = 0 DO NOT INCLUDE DUCTILE TEARING AS A POTENTIAL FRACTURE MODE                             *
+* IDT_OPTION = 1 INCLUDE DUCTILE TEARING AS A POTENTIAL FRACTURE MODE                                    *
+*--------------------------------------------------------------------------------------------------------*
+* IDT_INI    = 0 DO NOT CREATE A LOG OF POTENTIAL DUCTILE TEARING INITIATIONS                            *
+* IDT_INI    = 1 CREATE A LOG OF POTENTIAL DUCTILE TEARING INITIATIONS                                   *
+*--------------------------------------------------------------------------------------------------------*
+* ILONG_OUT  = 0 DO NOT CREATE Major-Region ITRAN Files                                                  *
+* ILONG_OUT  = 1 CREATE Major-Region ITRAN Files                                                         *
+**********************************************************************************************************
+CNT2 IRTNDT=2006 TC=556 EFPY=60 IDT_OPTION=1 IDT_INI=0 ILONG_OUT=0
+**********************************************************************************************************
+* ====================                                                                                   *
+* Control Record CNT3                                                                                    *
+* ====================                                                                                   *
+*--------------------------------------------------------------------------------------------------------*
+* FLWSTR   = UNIRRADIATED FLOW STRESS USED IN PREDICTING FAILURE BY REMAINING LIGAMENT INSTABILITY [ksi] *
+*--------------------------------------------------------------------------------------------------------*
+* USKIA    = MAXIMUM VALUE ALLOWED FOR KIc or KIa                                           [ksi-in^1/2] *
+*--------------------------------------------------------------------------------------------------------*
+* KIa_Model    = 1 Use high-constraint KIa model based on CCA specimens                                  *
+* KIa_Model    = 2 Use KIa model based on CCA + large specimen data                                      *
+*--------------------------------------------------------------------------------------------------------*
+* LAYER_OPTION = 0 DONOT RESAMPLE PF WHEN ADVANCING INTO NEW WELD LAYER                                  *
+* LAYER_OPTION = 1 RESAMPLE PF WHEN ADVANCING INTO NEW WELD LAYER                                        *
+*--------------------------------------------------------------------------------------------------------*
+* FAILCR       = FRACTION OF WALL THICKNESS FOR VESSEL FAILURE BY THROUGH-WALL CRACK PROPAGATION         *
+*--------------------------------------------------------------------------------------------------------*
+* =============================                                                                          *
+* Notes for Control Record CNT3                                                                          *
+* =============================                                                                          *
+*     If ductile tearing model is included, then the values for USKIA and KIa_Model are ignored.         *
+*     They are automatically set internally to KIa_Model=2 and there is no upper limit on USKIa.         *
+*     If ductile tearing is not included in the analysis (IDT_OPTION = 0 on CNT1), both the KIa_Model    *
+*     and USKIA are user-specified on CNT3.                                                              *
+*                                                                                                        *
+**********************************************************************************************************
+CNT3 FLWSTR=80 USKIA=800 KIa_Model=2 LAYER_OPTION=1 FAILCR=0.9
+**********************************************************************************************************
+* ====================                                                                                   *
+* Record GENR                                                                                            *
+* ====================                                                                                   *
+*--------------------------------------------------------------------------------------------------------*
+* SIGFGL = A MULTIPLIER ON THE BEST ESTIMATE OF FLUENCE FOR A GIVEN SUBREGION                            *
+*          PRODUCES THE STANDARD DEVIATION FOR THE NORMAL DISTRIBUTION USED TO SAMPLE THE MEAN           *
+*          OF THE LOCAL FLUENCE DISTRIBUTION.                                                            *
+*--------------------------------------------------------------------------------------------------------*
+* SIGFLC = A MULTIPLIER ON THE SAMPLED MEAN OF THE LOCAL FLUENCE FOR A GIVEN SUBREGION                   *
+*          PRODUCES THE STANDARD DEVIATION FOR THE NORMAL DISTRIBUTION USED TO SAMPLE THE LOCAL FLUENCE  *
+*--------------------------------------------------------------------------------------------------------*
+* ======================                                                                                 *
+* Notes for Record GENR                                                                                  *
+* ======================                                                                                 *
+* Let 'flue' be the best estimate for the subregion neutron fluence at inside surface of the RPV wall.   *
+* flue_STDEV_global = SIGFGL*flue                                                                        *
+* flue_MEAN_local   << Normal(flue,flue_STDEV_global)                                                    *
+* flue_STDEV_local  = SIGFLC*flue_MEAN_local                                                             *
+* flue_local        << Normal(flue_MEAN_local,flue_STDEV_local)                                          *
+*                                                                                                        *
+**********************************************************************************************************
+GENR SIGFGL=0.056 SIGFLC=0.118
+**********************************************************************************************************
+* ====================                                                                                   *
+* Record SIGW                                                                                            *
+* ====================                                                                                   *
+* STANDARD DEVIATIONS (STDEV) OF NORMAL DISTRIBUTIONS FOR WELD CHEMISTRY SAMPLING:                       *
+* WSIGCU = STANDARD DEVIATION FOR COPPER CHEMISTRY SAMPLING IN WELDS                               [wt%] *
+* WSIGNI = STANDARD DEVIATION FOR NICKEL CHEMISTRY SAMPLING IN WELDS                               [wt%] *
+* WSIGP  = STANDARD DEVIATION FOR PHOSPHOROUS CHEMISTRY SAMPLING IN WELDS                          [wt%] *
+*--------------------------------------------------------------------------------------------------------*
+* ======================                                                                                 *
+* Notes for Record SIGW                                                                                  *
+* ======================                                                                                 *
+* FOR NICKEL IN WELDS THERE ARE TWO POSSIBILITIES.                                                       *
+* (1) FOR HEATS 34B009 AND W5214 (Ni - addition welds)                                                   *
+*     WSIGNI = 0.162 wt% using a normal distribution.                                                    *
+* (2) For other heats, the standard deviation (WSIGNI) shall be sampled from a normal distribution       *
+*     with mean equal to 0.029 wt% and standard deviation = 0.0165 wt%                                   *
+**********************************************************************************************************
+SIGW WSIGCU=0.167 WSIGNI=0.162 WSIGP=0.0013
+**********************************************************************************************************
+* ====================                                                                                   *
+* Record SIGP                                                                                            *
+* ====================                                                                                   *
+* STANDARD DEVIATIONS (STDEV) OF NORMAL DISTRIBUTIONS FOR PLATE CHEMISTRY SAMPLING:                      *
+* PSIGCU = STANDARD DEVIATION FOR COPPER CHEMISTRY SAMPLING IN PLATES                              [wt%] *
+* PSIGNI = STANDARD DEVIATION FOR NICKEL CHEMISTRY SAMPLING IN PLATES                              [wt%] *
+* PSIGP  = STANDARD DEVIATION FOR PHOSPHOROUS CHEMISTRY SAMPLING IN PLATES                         [wt%] *
+*--------------------------------------------------------------------------------------------------------*
+* ======================                                                                                 *
+* Notes for Record SIGP                                                                                  *
+* ======================                                                                                 *
+* RECOMMENDED VALUES ARE: 0.0073, 0.0244, 0.0013 for Cu, Ni, and P, respectively.                        *
+**********************************************************************************************************
+SIGP PSIGCU=0.0073 PSIGNI=0.0244 PSIGP=0.0013
+**********************************************************************************************************
+* ===============================                                                                        *
+* Notes for RecordS SIGW and SIGP                                                                        *
+* ===============================                                                                        *
+* THE ABOVE DISTRIBUTIONS ARE FOR THE 1ST FLAW POSITIONED IN A PARTICULAR SUBREGION.                     *
+* IF THE CURRENT FLAW IS THE 2ND OR MORE FLAW FOR THIS SUBREGION, THEN FAVPFM WILL USE                   *
+* THE LOCAL VARIABILITY SAMPLING PROTOCOLS PRESENTED IN THE THEORY MANUAL.                               *
+**********************************************************************************************************
+**********************************************************************************************************
+* ====================                                                                                   *
+* Record TRAC                                                                                            *
+* ====================                                                                                   *
+* ITRAN           = TRANSIENT NUMBER                                                                     *
+* IRPV            = RPV SIMULATION                                                                       *
+* KFLAW           = FLAW NUMBER                                                                          *
+* FLAW_LOG_OPTION = 0 DO NOT CREATE FLAW LOG TABLES                                                      *
+* FLAW_LOG_OPTION = 1 DO CREATE FLAW LOG TABLES                                                          *
+*--------------------------------------------------------------------------------------------------------*
+* ===============================                                                                        *
+* Notes for Record TRAC                                                                                  *
+* ===============================                                                                        *
+* THE ABOVE FLAGS IDENTIFY A SPECIFIC TRANSIENT, RPV SIMULATION, AND FLAW NUMBER WHOSE COMPLETE          *
+* HISTORY WILL BE GIVEN IN THE FILES: 'TRACE.OUT' AND 'ARREST.OUT'                                       *
+* SEE THE USER'S GUIDE FOR DETAILS ON THE CONTENTS OF THESE FILES                                        *
+*                                                                                                        *
+**********************************************************************************************************
+TRAC ITRAN=3 IRPV=1 KFLAW=1817 FLAW_LOG_OPTION=1
+**********************************************************************************************************
+* ====================                                                                                   *
+* Record LDQA                                                                                            *
+* ====================                                                                                   *
+* THE LDQA RECORD PROVIDES THE OPPORTUNITY TO CHECK LOAD-RELATED SOLUTIONS                               *
+* SUCH AS TEMPERATURE, STRESSES, AND KI.                                                                 *
+*                                                                                                        *
+* IQA        = 0 ==> PROBABILISTIC ANALYSIS: FURTHER LDQA RECORDS IGNORED                                *
+* IQA        = 1 ==> DETERMINISTIC ANALYSIS: FAVLoad POST_PROCESSING                                     *
+* IQA        = 2 ==> CRITICAL RTNDT ANALYSIS                                                             *
+*--------------------------------------------------------------------------------------------------------*
+* IF IQA = 1 ==> DETERMINISTIC ANALYSIS: FAVLoad POST_PROCESSING                                         *
+*     IOPT   = 1 ==> GENERATE TIME HISTORY AT SPECIFIC THROUGH WALL LOCATION                             *
+*     IOPT   = 2 ==> GENERATE THROUGH WALL DISTRIBUTION AT SPECIFIC TIME                                 *
+* IF IQA = 2 ==> CRITICAL RTNDT ANALYSIS                                                                 *
+*     IOPT   = 2 ==> CRITICAL RTNDT ANALYSIS FOR EMBEDDED FLAW                                           *
+*     IOPT   = 5 ==> CRITICAL RTNDT ANALYSIS FOR SURFACE-BREAKING FLAW                                   *
+*--------------------------------------------------------------------------------------------------------*
+* IFLOR      = 1 ==> FLAW ORIENTATION IS AXIAL                                                           *
+* IFLOR      = 2 ==> FLAW ORIENTATION IS CIRCUMFERENTIAL                                                 *
+*--------------------------------------------------------------------------------------------------------*
+* IWELD      = 0 ==> DOES NOT INCLUDE THRU-WALL WELD RESIDUAL STRESS                                     *
+* IWELD      = 1 ==> DOES INCLUDE THRU-WALL WELD RESIDUAL STRESS                                         *
+*--------------------------------------------------------------------------------------------------------*
+* IKIND      = 1 ==> INNER-SURFACE BREAKING FLAW                                                         *
+* IKIND      = 2 ==> EMBEDDED FLAW                                                                       *
+* IKIND      = 3 ==> OUTER-SURFACE BREAKING FLAW                                                         *
+*--------------------------------------------------------------------------------------------------------*
+* XIN IS ONLY USED IF IKIND=2 (EMBEDDED FLAWS)                                                           *
+* XIN        = IF IOPT=1; LOCATION OF INNER CRACK TIP FROM INNER SURFACE                            [IN] *
+*--------------------------------------------------------------------------------------------------------*
+* IF IQA = 1 ==> DETERMINISTIC ANALYSIS: FAVLoad POST_PROCESSING                                         *
+*         XVAR       = FLAW DEPTH IF IOPT=1                                                         [IN] *
+*                    = TIME IF IOPT=2                                                              [MIN] *
+*         ASPECT     = ASPECT RATIO FOR EMBEDDED FLAWS: ANY VALUE > 0                                    *
+*                      IGNORED FOR SURFACE-BREAKING FLAWS                                                *
+* IF IQA = 2 ==> CRITICAL RTNDT ANALYSIS                                                                 *
+*         XVAR       = FLAW DEPTH                                                                   [IN] *
+*         PERCENTILE = PERCENTILE FOR WEIBULL LOWER BOUND CURVE USED FOR Kic                             *
+*--------------------------------------------------------------------------------------------------------*
+* ===============================                                                                        *
+* Notes for Record LDQA                                                                                  *
+* ===============================                                                                        *
+* IQA = 0 NO VALIDATION REPORTS WILL BE GENERATED, PFM ANALYSIS WILL BE PERFORMED                        *
+* IQA = 1 LOAD PARAMETERS WILL BE GENERATED FOR VERIFICATION PURPOSES, PFM ANALYSIS WILL NOT BE PERFORMED*
+**********************************************************************************************************
+LDQA IQA=1 IOPT=1 IFLOR=1 IWELD=0 IKIND=1 XIN=6.36 XVAR=0.613 ASPECT=6

@@ -1,0 +1,159 @@
+
+
+               ************************************************
+               *                                              *
+               *                WELCOME TO FAVPRO             *
+               *                                              *
+               *  FRACTURE ANALYSIS OF VESSELS: PROBABILISTIC *
+               *                 VERSION 0.1.0                *
+               *                                              *
+               *         INCLUDES AS-FOUND FLAW OPTION        *
+               *                                              *
+               *     FAVPFM MODULE: PERFORMS PROBABILISTIC    *
+               *          FRACTURE MECHANICS ANALYSES         *
+               *                                              *
+               *     PROBLEMS OR QUESTIONS REGARDING FAVOR    *
+               *              SHOULD BE DIRECTED TO:          *
+               *                                              *
+               *               PATRICK RAYNAUD                *
+               *  UNITED STATES NUCLEAR REGULATORY COMMISSION *
+               *     Office of Nuclear Regulatory Research    *
+               *                                              *
+               *         e-mail: patrick.raynaud@nrc.gov      *
+               *              phone: (301) 415-1987           *
+               *                                              *
+               ************************************************
+
+          ***********************************************************
+          * This computer program was prepared as an account of     *
+          * work sponsored by the United States Government          *
+          * Neither the United States, nor the United States        *
+          * Department of Energy, nor the United States Nuclear     *
+          * Regulatory Commission, nor any of their employees,      *
+          * nor any of their contractors, subcontractors, or their  *
+          * employees, makes any warranty, express or implied, or   *
+          * assumes any legal liability or responsibility for the   *
+          * accuracy, completeness, or usefulness of any            *
+          * information, apparatus, product, or process disclosed,  *
+          * or represents that its use would not infringe           *
+          * privately-owned rights.                                 *
+          *                                                         *
+          ***********************************************************
+
+
+
+               DATE: 17-Mar-2022  TIME: 16:55:25
+
+
+
+               FAVPFM INPUT FILE NAME       = PFM_test_ver_21.in                                              
+               FAVLOAD OUTPUT FILE NAME     = ../FAVLOADin/LOAD_test_ver_5.out                                
+               FAVPFM OUTPUT FILE NAME      = PFM_test_ver_21.out                                             
+               FAVPFM INPUT ECHO FILE NAME  = PFM_test_ver_21.echo                                            
+
+
+
+OPTION FLAGS RETRIEVED FROM INPUT FILE
+ IFLOR = 2 IWELD = 0
+ IOPT  = 2 IKIND = 2
+
+ WHERE
+   IFLOR = 1 AND IWELD = 1 ==> KI = AXIAL W/RESIDUAL
+   IFLOR = 1 AND IWELD = 0 ==> KI = AXIAL W/O RESIDUAL
+   IFLOR = 2 AND IWELD = 1 ==> KI = CIRCUM W/RESIDUAL
+   IFLOR = 2 AND IWELD = 0 ==> KI = CIRCUM W/O RESIDUAL
+
+   IOPT  = 1 ==> TIME HISTORY AT SPECIFIC WALL LOCATION
+   IOPT  = 2 ==> THROUGH-WALL PROFILE AT SPECIFIC TIME
+   IKIND = 1 ==> INNER SURFACE-BREAKING FLAW
+   IKIND = 2 ==> EMBEDDED FLAW
+   IKIND = 3 ==> OUTER SURFACE-BREAKING FLAW
+
+   ************
+   OUTPUT UNITS
+   ************
+   TIME   (MINUTES)
+   TEMP   (F)
+   R      (IN.)
+   PRESS  (KSI)
+   STRESS (KSI)
+   KI     (KSI-IN^1/2)
+
+   XVAR = FLAW DEPTH (IN.)    ==> IOPT = 1
+   XVAR = ELAPSED TIME (MIN.) ==> IOPT = 2
+
+
+
+
+   ***************
+   VESSEL GEOMETRY
+   ***************
+   INNER RADIUS   =     86.000 IN.
+   OUTER RADIUS   =     94.750 IN.
+   WALL THICKNESS =      8.750 IN.
+   CLAD THICKNESS =      0.250 IN.
+
+
+   *******************************************************
+   CIRCUMFERENTIAL EMBEDDED FLAW WITHOUT RESIDUAL STRESSES
+   RESULTS FOR   10.000 MIN. ELAPSED TIME IN TRANSIENT
+   POSITION OF POINT 1 =  0.300 IN.(FROM INNER SURF.)
+   ASPECT RATIO        =  6.000
+   *******************************************************
+ 
+
+ TRANSIENT NUMBER   1
+ 
+                                  AXIAL STRESSES
+                                 MEMBRANE BENDING                         POINT 1
+     R   FL DEPTH  TEMP    PRESS   STRM     STRB     Q      SMM     SMB     KI  
+    0.35    0.05  326.21    0.14  -48.02  106.87    1.08    1.00    1.02   16.51
+    0.44    0.14  333.01    0.14  -48.02  106.87    1.08    1.00    1.02   27.14
+    0.53    0.23  339.56    0.14  -47.66  106.49    1.08    1.01    1.01   34.35
+    0.61    0.31  346.11    0.14  -47.50  106.32    1.08    1.01    1.01   40.02
+    0.70    0.40  352.51    0.14  -46.98  105.76    1.08    1.02    1.00   44.69
+    0.79    0.49  358.76    0.14  -46.29  105.01    1.08    1.02    1.00   48.65
+    0.88    0.57  365.01    0.14  -45.80  104.49    1.08    1.03    1.00   52.07
+    0.96    0.66  370.38    0.14  -43.47  101.99    1.08    1.04    0.99   55.01
+    1.05    0.75  375.76    0.14  -41.68  100.07    1.08    1.05    0.99   57.63
+    1.14    0.84  381.13    0.14  -40.26   98.54    1.08    1.06    0.98   59.97
+    1.23    0.93  386.51    0.14  -39.11   97.31    1.08    1.07    0.98   62.08
+    1.31    1.01  391.89    0.14  -38.16   96.29    1.08    1.08    0.97   63.97
+    1.40    1.10  397.26    0.14  -37.37   95.43    1.08    1.09    0.97   65.68
+    1.49    1.19  402.64    0.14  -36.68   94.70    1.08    1.10    0.96   67.21
+    1.57    1.27  408.01    0.14  -36.10   94.07    1.08    1.11    0.96   68.59
+    1.66    1.36  413.39    0.14  -35.58   93.52    1.08    1.12    0.95   69.82
+    1.75    1.45  418.76    0.14  -35.13   93.04    1.08    1.13    0.95   70.93
+    1.84    1.54  422.85    0.14  -33.59   91.38    1.08    1.14    0.95   72.13
+    1.93    1.62  426.94    0.14  -32.22   89.91    1.08    1.15    0.94   73.26
+    2.01    1.71  431.02    0.14  -30.98   88.58    1.08    1.16    0.94   74.32
+    2.10    1.80  435.11    0.14  -29.87   87.38    1.08    1.17    0.93   75.33
+    2.19    1.89  439.20    0.14  -28.85   86.30    1.08    1.18    0.93   76.28
+    2.44    2.14  450.87    0.14  -26.42   83.68    1.08    1.21    0.91   78.72
+    2.69    2.39  461.76    0.14  -24.09   81.18    1.08    1.23    0.90   81.01
+    2.94    2.64  470.28    0.14  -21.11   77.99    1.08    1.26    0.89   83.69
+    3.19    2.89  478.79    0.14  -18.65   75.34    1.08    1.28    0.88   86.25
+    3.44    3.14  487.31    0.14  -16.58   73.12    1.08    1.31    0.86   88.69
+    3.69    3.39  493.90    0.14  -14.08   70.43    1.08    1.33    0.85   91.71
+    3.94    3.64  499.85    0.14  -11.70   67.87    1.08    1.35    0.84   94.94
+    4.19    3.89  505.80    0.14   -9.62   65.65    1.08    1.38    0.83   98.17
+    4.44    0.00  511.25    0.14
+    4.69    0.00  515.20    0.14
+    4.94    0.00  519.15    0.14
+    5.19    0.00  523.11    0.14
+    5.44    0.00  525.96    0.14
+    5.69    0.00  528.44    0.14
+    5.94    0.00  530.93    0.14
+    6.19    0.00  533.16    0.14
+    6.44    0.00  534.65    0.14
+    6.69    0.00  536.13    0.14
+    6.94    0.00  537.62    0.14
+    7.19    0.00  538.55    0.14
+    7.44    0.00  539.29    0.14
+    7.69    0.00  540.04    0.14
+    7.94    0.00  540.68    0.14
+    8.19    0.00  541.04    0.14
+    8.31    0.00  541.22    0.14
+
+               DATE: 17-Mar-2022  TIME: 16:55:26
+

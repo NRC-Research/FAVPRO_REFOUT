@@ -1,0 +1,648 @@
+
+
+               ************************************************
+               *                                              *
+               *                WELCOME TO FAVPRO             *
+               *                                              *
+               *  FRACTURE ANALYSIS OF VESSELS: PROBABILISTIC *
+               *                 VERSION 0.1.0                *
+               *                                              *
+               *         INCLUDES AS-FOUND FLAW OPTION        *
+               *                                              *
+               *     FAVPFM MODULE: PERFORMS PROBABILISTIC    *
+               *          FRACTURE MECHANICS ANALYSES         *
+               *                                              *
+               *     PROBLEMS OR QUESTIONS REGARDING FAVOR    *
+               *              SHOULD BE DIRECTED TO:          *
+               *                                              *
+               *               PATRICK RAYNAUD                *
+               *  UNITED STATES NUCLEAR REGULATORY COMMISSION *
+               *     Office of Nuclear Regulatory Research    *
+               *                                              *
+               *         e-mail: patrick.raynaud@nrc.gov      *
+               *              phone: (301) 415-1987           *
+               *                                              *
+               ************************************************
+
+          ***********************************************************
+          * This computer program was prepared as an account of     *
+          * work sponsored by the United States Government          *
+          * Neither the United States, nor the United States        *
+          * Department of Energy, nor the United States Nuclear     *
+          * Regulatory Commission, nor any of their employees,      *
+          * nor any of their contractors, subcontractors, or their  *
+          * employees, makes any warranty, express or implied, or   *
+          * assumes any legal liability or responsibility for the   *
+          * accuracy, completeness, or usefulness of any            *
+          * information, apparatus, product, or process disclosed,  *
+          * or represents that its use would not infringe           *
+          * privately-owned rights.                                 *
+          *                                                         *
+          ***********************************************************
+
+
+
+               DATE: 17-Mar-2022  TIME: 16:54:51
+
+
+
+               FAVPFM INPUT FILE NAME       = PFM_test_ver_9.in                                               
+               FAVLOAD OUTPUT FILE NAME     = ../FAVLOADin/LOAD_test_val_1.out                                
+               FAVPFM OUTPUT FILE NAME      = PFM_test_ver_9.out                                              
+               FAVPFM INPUT ECHO FILE NAME  = PFM_test_ver_9.echo                                             
+
+
+
+
+                *******************************************
+                Binary restart files will be created using 
+                a checkpoint interval of  200 trials.
+                *******************************************
+
+ NUMBER OF TIME STEPS IN FAVLoad FILE   =   601
+
+ NUMBER OF IGA TRIALS PER FLAW          =   100
+ FLOW STRESS - USED IN FAILURE ANALYSIS =  80.0 ksi
+ Maximum value used for KIc and KIa     = 800.0 ksi-in^1/2
+ KIc/KIa cap not used if ductile-tearing model is invoked.
+
+ Stochastic model for crack arrest KIa  =     2
+ where
+   1 = model based on high-constraint CCA specimens
+   2 = model based on CCA and large-specimen data
+   KIa model set to 2 if ductile-tearing model is invoked.
+
+ Radiation embrittlement correlation    =   992
+ where
+     992 = Regulatory Guide 1.99, revision 2
+    2000 = Eason 2000
+    2006 = Eason 2006
+   20071 = EricksonKirk 2007
+   20072 = RADAMO 2007
+   20073 = Combined EricksonKirk 2007 + RADAMO 2007
+
+ Steady-state cooling water temperature  =  556. degrees F
+
+ Effective full-power years of operation =   60.
+
+ 
+ DEFINITION OF STANDARD DEVIATIONS FOR SIMULATING
+ THE FOLLOWING PARAMETERS 
+ 
+ SURFACE NEUTRON FLUENCE - GLOBAL =   0.118* BEST ESTIMATE VALUE
+ SURFACE NEUTRON FLUENCE - LOCAL  =   0.056* BEST ESTIMATE VALUE
+ COPPER      - WELD   =       0.167 wt %
+ COPPER      - PLATE  =      0.0073 wt %
+ NICKEL      - WELD   =      0.1620 wt %
+ NICKEL      - PLATE  =      0.0244 wt %
+ PHOSPHORUS  - WELD   =      0.0013 wt %
+ PHOSPHORUS  - PLATE  =      0.0013 wt %
+ 
+ NUMBER OF VESSEL SUBREGIONS:    WELD=   15 PLATE=   18 TOTAL=   33
+ NUMBER OF VESSEL MAJOR REGIONS: WELD=    7 PLATE=    6 TOTAL=   13
+ 
+       SURF-BREAKING FLAW CHARACTERIZATION DATASET FILE NAME  = ../FlawFiles/PWRsurf5.dat                                       
+       EMBEDDED WELD FLAW CHARACTERIZATION DATASET FILE NAME  = ../FlawFiles/PWRweld50.dat                                      
+       EMBEDDED PLATE FLAW CHARACTERIZATION DATASET FILE NAME = ../FlawFiles/PWRplate50.dat                                     
+
+
+                          ***********************************************************
+                          *                                                         *
+                          *                   PFM ANALYSIS RESULTS                  *
+                          *                                                         *
+                          ***********************************************************
+
+
+
+              ****************************************************************************
+              * INITIAL RANDOM NUMBER GENERATOR SEEDS   :      1234567890      123456789 *
+              ****************************************************************************
+
+
+                                  ************************************************
+                                  ** IPFLAW=1: SURFACE BREAKING FLAWS ARE       **
+                                  ** INTERNAL SURFACE BREAKING                  **
+                                  **                                            **
+                                  ** EMBEDDED FLAWS ARE UNIFORMLY               **
+                                  ** DISTRIBUTED IN INNER 3/8 OF RPV BASE METAL **
+                                  **                                            **
+                                  **                                            **
+                                  ** WELD LAYER RESAMPLING TURNED OFF           **
+                                  ************************************************
+ 
+                              ****************************************************
+                              ** WARM-PRESTRESS OPTION 1 CHOSEN:                **
+                              **                                                **
+                              ** TO HAVE A NON-ZERO instantaneous conditional   **
+                              ** probability of crack initiation at a discrete  **
+                              ** transient time step:                           **
+                              **                                                **
+                              ** applied KI must be greater than the Weibull    **
+                              ** "a" parameter                                  **
+                              **                                                **
+                              **  AND                                           **
+                              **                                                **
+                              ** applied KI MUST EXCEED MAXIMUM KI at all       **
+                              ** previous discrete transient time steps         **
+                              ****************************************************
+ 
+                                  ************************************************
+                                  ** DO NOT ANALYZE CATEGORY 3 PLATE FLAWS      **
+                                  ** DUCTILE TEARING MODEL TURNED ON            **
+                                  ** FAILURE CRITERIA a/t =    0.90             **
+                                  ************************************************
+ 
+ 
+ 
+                                  *********************************************
+                                  *********************************************
+                                  **  PFM RESULTS FOR TRANSIENT NUMBER     1 **
+                                  *********************************************
+                                  *********************************************
+
+                                  *********************************************
+                                  **                                         **
+                                  **  NUMBER OF COMPLETED TRIALS =     100   **
+                                  **                                         **
+                                  *********************************************
+
+                                         MEAN VALUE OF CPI =     1.032E-07
+                                         MEAN VALUE OF CPF =     1.011E-07
+ 
+                                      *************************************
+                                      *  RPV BELTLINE MAJOR REGION REPORT *
+                                      *       BY PARENT SUBREGION         *
+                                      *************************************
+  ====================================================================================================
+                                         |---Initiation---|   |----Cleavage----| |------Ductile-----|
+   MAJOR     RTndt  % OF     SIMULATED    # of FLAWS  % of      # of FLAWS  % of   # of FLAWS    % of
+   REGION    (MAX)  FLAWS      FLAWS       CPI > 0   CPI        CPF > 0     CPF       CPF > 0     CPF
+  ====================================================================================================
+     1       328.5   1.65         33         0        0.00         0        0.00         0        0.00
+     2       328.5   1.65         31         0        0.00         0        0.00         0        0.00
+     3       316.8   1.65         35         0        0.00         0        0.00         0        0.00
+     4       316.4   0.99         26         0        0.00         0        0.00         0        0.00
+     5       327.8   0.99         19         0        0.00         0        0.00         0        0.00
+     6       327.8   0.99         22         1        3.10         1        1.01         0        0.00
+     7       332.4  11.34        199         0        0.00         0        0.00         0        0.00
+     8       234.1  16.85        310         1        0.00         1        0.00         0        0.00
+     9       261.2  16.85        312         1       96.66         1       98.75         0        0.00
+    10       232.0  16.85        308         0        0.00         0        0.00         0        0.00
+    11       185.4  10.07        206         1        0.24         1        0.24         0        0.00
+    12       218.5  10.07        204         0        0.00         0        0.00         0        0.00
+    13       143.0  10.07        195         0        0.00         0        0.00         0        0.00
+  ====================================================================================================
+            TOTALS 100.00       1900         4      100.00         4      100.00         0        0.00
+  ====================================================================================================
+ 
+                                 NOTE: MEAN VALUE OF RTNDT AT CRACK TIP=  201.72
+ 
+                                      *************************************
+                                      *  RPV BELTLINE MAJOR REGION REPORT *
+                                      *       BY CHILD SUBREGION          *
+                                      *************************************
+  ====================================================================================================
+                                         |---Initiation---|   |----Cleavage----| |------Ductile-----|
+   MAJOR     RTndt  % OF     SIMULATED    # of FLAWS  % of      # of FLAWS  % of   # of FLAWS    % of
+   REGION    (MAX)  FLAWS      FLAWS       CPI > 0   CPI        CPF > 0     CPF       CPF > 0     CPF
+  ====================================================================================================
+     1       328.5   1.65         33         0        0.00         0        0.00         0        0.00
+     2       328.5   1.65         31         0        0.00         0        0.00         0        0.00
+     3       316.8   1.65         35         0        0.00         0        0.00         0        0.00
+     4       316.4   0.99         26         0        0.00         0        0.00         0        0.00
+     5       327.8   0.99         19         0        0.00         0        0.00         0        0.00
+     6       327.8   0.99         22         1        3.10         1        1.01         0        0.00
+     7       332.4  11.34        199         0        0.00         0        0.00         0        0.00
+     8       234.1  16.85        310         1        0.00         1        0.00         0        0.00
+     9       261.2  16.85        312         1       96.66         1       98.75         0        0.00
+    10       232.0  16.85        308         0        0.00         0        0.00         0        0.00
+    11       185.4  10.07        206         1        0.24         1        0.24         0        0.00
+    12       218.5  10.07        204         0        0.00         0        0.00         0        0.00
+    13       143.0  10.07        195         0        0.00         0        0.00         0        0.00
+  ====================================================================================================
+            TOTALS 100.00       1900         4      100.00         4      100.00         0        0.00
+  ====================================================================================================
+ 
+                      FOR IPFLAW = 1: CATEGORY 1 FLAWS ARE ON THE   
+                                      INTERNAL SURFACE              
+ 
+                      CATEGORY 2 FLAWS ARE EMBEDDED IN INTERNAL 1/8 
+                                 OF BASE METAL THICKNESS            
+ 
+                      CATEGORY 3 FLAWS ARE EMBEDDED BETWEEN INTERNAL
+                       1/8 AND INTERNAL 3/8 OF BASE METAL THICKNESS 
+ 
+                      **********************************************
+                      * FLAW DISTRIBUTION BY MATERIAL AND CATEGORY *
+                      *             BY PARENT SUBREGION            *
+                      **********************************************
+                     ==================================================
+                                         WELD MATERIAL
+                     ==================================================
+                      number of   number    % of     number    % of
+                      simulated    with     total     with     total
+                         flaws    CPI>0      CPI     CPF>0     CPF
+                     ==================================================
+ FLAW CATEGORY 1(int)         7       1      3.10       1      1.01
+ FLAW CATEGORY 2(int)       110       0      0.00       0      0.00
+ FLAW CATEGORY 3(int)       248       0      0.00       0      0.00
+                     ==================================================
+           TOTALS           365       1      3.10       1      1.01
+                     ==================================================
+ 
+ 
+                     ==================================================
+                                        PLATE MATERIAL
+                     ==================================================
+                      number of   number    % of     number    % of
+                      simulated    with     total     with     total
+                         flaws    CPI>0      CPI     CPF>0     CPF
+                     ==================================================
+ FLAW CATEGORY 1(int)       407       3     96.90       3     98.99
+ FLAW CATEGORY 2(int)       385       0      0.00       0      0.00
+ FLAW CATEGORY 3(int)       743       0      0.00       0      0.00
+                     ==================================================
+           TOTALS          1535       3     96.90       3     98.99
+                     ==================================================
+ 
+                      **********************************************
+                      * FLAW DISTRIBUTION BY MATERIAL AND CATEGORY *
+                      *             BY CHILD SUBREGION             *
+                      **********************************************
+                     ==================================================
+                                         WELD MATERIAL
+                     ==================================================
+                      number of   number    % of     number    % of
+                      simulated    with     total     with     total
+                         flaws    CPI>0      CPI     CPF>0     CPF
+                     ==================================================
+ FLAW CATEGORY 1(int)         7       1      3.10       1      1.01
+ FLAW CATEGORY 2(int)       110       0      0.00       0      0.00
+ FLAW CATEGORY 3(int)       248       0      0.00       0      0.00
+                     ==================================================
+           TOTALS           365       1      3.10       1      1.01
+                     ==================================================
+ 
+ 
+                     ==================================================
+                                        PLATE MATERIAL
+                     ==================================================
+                      number of   number    % of     number    % of
+                      simulated    with     total     with     total
+                         flaws    CPI>0      CPI     CPF>0     CPF
+                     ==================================================
+ FLAW CATEGORY 1(int)       407       3     96.90       3     98.99
+ FLAW CATEGORY 2(int)       385       0      0.00       0      0.00
+ FLAW CATEGORY 3(int)       743       0      0.00       0      0.00
+                     ==================================================
+           TOTALS          1535       3     96.90       3     98.99
+                     ==================================================
+ 
+
+                  CHILD SUBREGION REPORTS SHOW LOCATIONS OF CONTROLLING
+                   RTNDTO AND CHEMISTRY CONTENT FOR WELD FUSION LINES
+
+ 
+ 
+                   **********************************************************
+                   * FLAW DISTRIBUTION BY MATERIAL, CATEGORY, & ORIENTATION *
+                   *                  BY PARENT SUBREGION                   *
+                   **********************************************************
+                     ==================================================
+                                         WELD MATERIAL
+                     ==================================================
+                      number of   number    % of     number    % of
+                      simulated    with     total     with     total
+                         flaws    CPI>0      CPI     CPF>0     CPF
+                     ==================================================
+AXIAL FLAW CATEGORY 1         0       0      0.00       0      0.00
+AXIAL FLAW CATEGORY 2        50       0      0.00       0      0.00
+AXIAL FLAW CATEGORY 3       112       0      0.00       0      0.00
+                     ==================================================
+AXIAL SUBTOTALS             162       0      0.00       0      0.00
+                     ==================================================
+ 
+CIRC. FLAW CATEGORY 1         7       1      3.10       1      1.01
+CIRC. FLAW CATEGORY 2        60       0      0.00       0      0.00
+CIRC. FLAW CATEGORY 3       136       0      0.00       0      0.00
+                     ==================================================
+CIRC. SUBTOTALS             203       1      3.10       1      1.01
+                     ==================================================
+WELD TOTALS                 365       1      3.10       1      1.01
+                     ==================================================
+ 
+ 
+                     ==================================================
+                                         PLATE MATERIAL
+                     ==================================================
+                      number of   number    % of     number    % of
+                      simulated    with     total     with     total
+                         flaws    CPI>0      CPI     CPF>0     CPF
+                     ==================================================
+AXIAL FLAW CATEGORY 1         0       0      0.00       0      0.00
+AXIAL FLAW CATEGORY 2       196       0      0.00       0      0.00
+AXIAL FLAW CATEGORY 3       368       0      0.00       0      0.00
+                     ==================================================
+AXIAL SUBTOTALS             564       0      0.00       0      0.00
+                     ==================================================
+CIRC. FLAW CATEGORY 1       407       3     96.90       3     98.99
+CIRC. FLAW CATEGORY 2       189       0      0.00       0      0.00
+CIRC. FLAW CATEGORY 3       375       0      0.00       0      0.00
+                     ==================================================
+CIRC. SUBTOTALS             971       3     96.90       3     98.99
+                     ==================================================
+PLATE TOTALS               1535       3     96.90       3     98.99
+                     ==================================================
+ 
+ 
+                     ==================================================
+                   **********************************************************
+                   * FLAW DISTRIBUTION BY MATERIAL, CATEGORY, & ORIENTATION *
+                   *                  BY CHILD SUBREGION                    *
+                   **********************************************************
+                     ==================================================
+                                         WELD MATERIAL
+                     ==================================================
+                      number of   number    % of     number    % of
+                      simulated    with     total     with     total
+                         flaws    CPI>0      CPI     CPF>0     CPF
+                     ==================================================
+AXIAL FLAW CATEGORY 1         0       0      0.00       0      0.00
+AXIAL FLAW CATEGORY 2        50       0      0.00       0      0.00
+AXIAL FLAW CATEGORY 3       112       0      0.00       0      0.00
+                     ==================================================
+AXIAL SUBTOTALS             162       0      0.00       0      0.00
+                     ==================================================
+CIRC. FLAW CATEGORY 1         7       1      3.10       1      1.01
+CIRC. FLAW CATEGORY 2        60       0      0.00       0      0.00
+CIRC. FLAW CATEGORY 3       136       0      0.00       0      0.00
+                     ==================================================
+CIRC. SUBTOTALS             339       1      3.10       1      1.01
+                     ==================================================
+WELD TOTALS                 501       1      3.10       1      1.01
+ 
+                     ==================================================
+                                         PLATE MATERIAL
+                     ==================================================
+                      number of   number    % of     number    % of
+                      simulated    with     total     with     total
+                         flaws    CPI>0      CPI     CPF>0     CPF
+                     ==================================================
+AXIAL FLAW CATEGORY 1         0       0      0.00       0      0.00
+AXIAL FLAW CATEGORY 2       196       0      0.00       0      0.00
+AXIAL FLAW CATEGORY 3       368       0      0.00       0      0.00
+                     ==================================================
+AXIAL SUBTOTALS             564       0      0.00       0      0.00
+                     ==================================================
+CIRC. FLAW CATEGORY 1       407       3     96.90       3     98.99
+CIRC. FLAW CATEGORY 2       189       0      0.00       0      0.00
+CIRC. FLAW CATEGORY 3       375       0      0.00       0      0.00
+                     ==================================================
+CIRC. SUBTOTALS             971       3     96.90       3     98.99
+                     ==================================================
+PLATE TOTALS               1535       3     96.90       3     98.99
+
+                  CHILD SUBREGION REPORTS SHOW LOCATIONS OF CONTROLLING
+                   RTNDTO AND CHEMISTRY CONTENT FOR WELD FUSION LINES
+
+ 
+ 
+ 
+              *********************************************
+              *     WELD FLAW-SIZE DISTRIBUTION REPORT    *
+              * FOR CONDITIONAL PROBABILITY OF INITIATION *
+              *********************************************
+=========================================================================
+flaw  simulated  #   % of    simulated  #   % of    simulated  #   % of
+depth  catgy 1 with total     catgy 2 with total     catgy 3 with  total
+(in)    flaws  CPI>0 CPI       flaws  CPI>0 CPI       flaws  CPI>0  CPI
+=========================================================================
+ 0.0850      0     0   0.00        13      0   0.00        34     0   0.00
+ 0.1700      0     0   0.00         7      0   0.00        19     0   0.00
+ 0.2550      0     0   0.00        10      0   0.00        24     0   0.00
+ 0.3400      0     0   0.00         8      0   0.00        23     0   0.00
+ 0.4250      2     0   0.00         7      0   0.00        26     0   0.00
+ 0.5100      0     0   0.00         3      0   0.00        15     0   0.00
+ 0.5950      0     0   0.00         7      0   0.00        13     0   0.00
+ 0.6800      0     0   0.00         8      0   0.00         9     0   0.00
+ 0.7650      2     1   3.10         9      0   0.00        15     0   0.00
+ 0.8500      1     0   0.00         6      0   0.00        12     0   0.00
+ 0.9350      0     0   0.00         9      0   0.00        11     0   0.00
+ 1.0200      0     0   0.00         8      0   0.00         7     0   0.00
+ 1.1050      2     0   0.00         7      0   0.00        16     0   0.00
+ 1.1900      0     0   0.00         2      0   0.00        15     0   0.00
+ 1.2750      0     0   0.00         6      0   0.00         9     0   0.00
+=========================================================================
+TOTALS     7     1   3.10       110      0   0.00       248     0   0.00
+=========================================================================
+ 
+              *********************************************
+              *    PLATE FLAW-SIZE DISTRIBUTION REPORT    *
+              * FOR CONDITIONAL PROBABILITY OF INITIATION *
+              *********************************************
+=========================================================================
+flaw  simulated  #   % of    simulated  #   % of    simulated  #   % of
+depth  catgy 1 with total     catgy 2 with total     catgy 3 with  total
+(in)    flaws  CPI>0 CPI       flaws  CPI>0 CPI       flaws  CPI>0  CPI
+=========================================================================
+ 0.0850     33     0   0.00        36      0   0.00        65     0   0.00
+ 0.1700     48     3  96.90        37      0   0.00        79     0   0.00
+ 0.2550     48     0   0.00        38      0   0.00        74     0   0.00
+ 0.3400     41     0   0.00        34      0   0.00        76     0   0.00
+ 0.4250     34     0   0.00        34      0   0.00        76     0   0.00
+ 0.5100     19     0   0.00        16      0   0.00        39     0   0.00
+ 0.5950     14     0   0.00        22      0   0.00        42     0   0.00
+ 0.6800     16     0   0.00        14      0   0.00        30     0   0.00
+ 0.7650     25     0   0.00        26      0   0.00        38     0   0.00
+ 0.8500     17     0   0.00        24      0   0.00        35     0   0.00
+ 0.9350     22     0   0.00        17      0   0.00        40     0   0.00
+ 1.0200     20     0   0.00        22      0   0.00        34     0   0.00
+ 1.1050     16     0   0.00        21      0   0.00        36     0   0.00
+ 1.1900     26     0   0.00        21      0   0.00        35     0   0.00
+ 1.2750     28     0   0.00        23      0   0.00        44     0   0.00
+=========================================================================
+TOTALS   407     3  96.90       385      0   0.00       743     0   0.00
+=========================================================================
+ 
+ 
+              *********************************************
+              *     WELD FLAW-SIZE DISTRIBUTION REPORT    *
+              *   FOR CONDITIONAL PROBABILITY OF FAILURE  *
+              *********************************************
+=========================================================================
+flaw  simulated  #   % of    simulated  #   % of    simulated  #   % of
+depth  catgy 1 with total     catgy 2 with total     catgy 3 with  total
+(in)    flaws  CPF>0 CPF       flaws  CPF>0 CPF       flaws  CPF>0  CPF
+=========================================================================
+ 0.0850      0     0   0.00        13      0   0.00        34     0   0.00
+ 0.1700      0     0   0.00         7      0   0.00        19     0   0.00
+ 0.2550      0     0   0.00        10      0   0.00        24     0   0.00
+ 0.3400      0     0   0.00         8      0   0.00        23     0   0.00
+ 0.4250      2     0   0.00         7      0   0.00        26     0   0.00
+ 0.5100      0     0   0.00         3      0   0.00        15     0   0.00
+ 0.5950      0     0   0.00         7      0   0.00        13     0   0.00
+ 0.6800      0     0   0.00         8      0   0.00         9     0   0.00
+ 0.7650      2     1   1.01         9      0   0.00        15     0   0.00
+ 0.8500      1     0   0.00         6      0   0.00        12     0   0.00
+ 0.9350      0     0   0.00         9      0   0.00        11     0   0.00
+ 1.0200      0     0   0.00         8      0   0.00         7     0   0.00
+ 1.1050      2     0   0.00         7      0   0.00        16     0   0.00
+ 1.1900      0     0   0.00         2      0   0.00        15     0   0.00
+ 1.2750      0     0   0.00         6      0   0.00         9     0   0.00
+=========================================================================
+TOTALS     7     1   1.01       110      0   0.00       248     0   0.00
+=========================================================================
+ 
+              *********************************************
+              *    PLATE FLAW-SIZE DISTRIBUTION REPORT    *
+              *   FOR CONDITIONAL PROBABILITY OF FAILURE  *
+              *********************************************
+=========================================================================
+flaw  simulated  #   % of    simulated  #   % of    simulated  #   % of
+depth  catgy 1 with total     catgy 2 with total     catgy 3 with  total
+(in)    flaws  CPF>0 CPF       flaws  CPF>0 CPF       flaws  CPF>0  CPF
+=========================================================================
+ 0.0850     33     0   0.00        36      0   0.00        65     0   0.00
+ 0.1700     48     3  98.99        37      0   0.00        79     0   0.00
+ 0.2550     48     0   0.00        38      0   0.00        74     0   0.00
+ 0.3400     41     0   0.00        34      0   0.00        76     0   0.00
+ 0.4250     34     0   0.00        34      0   0.00        76     0   0.00
+ 0.5100     19     0   0.00        16      0   0.00        39     0   0.00
+ 0.5950     14     0   0.00        22      0   0.00        42     0   0.00
+ 0.6800     16     0   0.00        14      0   0.00        30     0   0.00
+ 0.7650     25     0   0.00        26      0   0.00        38     0   0.00
+ 0.8500     17     0   0.00        24      0   0.00        35     0   0.00
+ 0.9350     22     0   0.00        17      0   0.00        40     0   0.00
+ 1.0200     20     0   0.00        22      0   0.00        34     0   0.00
+ 1.1050     16     0   0.00        21      0   0.00        36     0   0.00
+ 1.1900     26     0   0.00        21      0   0.00        35     0   0.00
+ 1.2750     28     0   0.00        23      0   0.00        44     0   0.00
+=========================================================================
+TOTALS   407     3  98.99       385      0   0.00       743     0   0.00
+=========================================================================
+ 
+ 
+             ===============================================
+                  **************************************
+                  * TRANSIENT TIME DISTRIBUTION REPORT *
+                  *    for transient sequence     1    *
+                  **************************************
+             ===============================================
+             TIME   TIME    % of    CDF of    % of    CDF of
+             STEP   (min)   total   total    total    total
+                            CDCPI   CDCPI    CDCPF    CDCPF
+             ===============================================
+            215   214.0   0.0000   0.0000   0.0000   0.0000
+            216   215.0   0.0006   0.0006   0.0002   0.0002
+            217   216.0   0.0027   0.0033   0.0006   0.0008
+            218   217.0   0.0076   0.0109   0.0022   0.0030
+            219   218.0   0.0160   0.0269   0.0041   0.0071
+            220   219.0   0.0290   0.0560   0.0077   0.0148
+            221   220.0   0.0473   0.1032   0.0116   0.0264
+            222   221.0   0.0714   0.1747   0.0212   0.0476
+            223   222.0   0.1021   0.2768   0.0365   0.0841
+            224   223.0   0.1399   0.4167   0.0372   0.1212
+            225   224.0   0.1850   0.6018   0.0548   0.1761
+            226   225.0   0.2379   0.8397   0.0754   0.2514
+            227   226.0   0.2988   1.1385   0.0916   0.3430
+            228   227.0   0.3679   1.5064   0.1165   0.4595
+            229   228.0   0.4450   1.9514   0.1546   0.6141
+            230   229.0   0.5300   2.4814   0.1787   0.7928
+            231   230.0   0.6230   3.1044   0.2164   1.0092
+            514   513.0   0.0000   3.1044   0.0000   1.0092
+            515   514.0   0.0001   3.1045   0.0001   1.0093
+            516   515.0   0.0007   3.1052   0.0008   1.0100
+            517   516.0   0.0026   3.1078   0.0027   1.0127
+            518   517.0   0.0065   3.1144   0.0067   1.0194
+            519   518.0   0.0131   3.1275   0.0134   1.0328
+            520   519.0   0.0233   3.1508   0.0238   1.0566
+            521   520.0   0.0377   3.1885   0.0385   1.0951
+            522   521.0   0.0573   3.2457   0.0585   1.1536
+            523   522.0   0.0828   3.3285   0.0846   1.2381
+            524   523.0   0.1153   3.4438   0.1177   1.3559
+            525   524.0   0.1555   3.5992   0.1588   1.5147
+            526   525.0   0.2044   3.8036   0.2088   1.7235
+            527   526.0   0.2632   4.0668   0.2689   1.9924
+            528   527.0   0.3326   4.3994   0.3398   2.3322
+            529   528.0   0.4138   4.8131   0.4227   2.7549
+            530   529.0   0.5079   5.3210   0.5188   3.2737
+            531   530.0   0.6159   5.9369   0.6292   3.9029
+            532   531.0   0.7387   6.6755   0.7546   4.6575
+            533   532.0   0.8783   7.5538   0.8973   5.5548
+            534   533.0   1.0351   8.5889   1.0575   6.6123
+            535   534.0   1.2102   9.7991   1.2364   7.8487
+            536   535.0   1.4060  11.2052   1.4364   9.2851
+            537   536.0   1.6227  12.8279   1.6578  10.9429
+            538   537.0   1.8620  14.6899   1.9023  12.8452
+            539   538.0   2.1252  16.8151   2.1711  15.0163
+            540   539.0   2.4140  19.2290   2.4662  17.4825
+            541   540.0   2.7301  21.9591   2.7891  20.2716
+            542   541.0   3.0731  25.0323   3.1396  23.4112
+            543   542.0   3.4475  28.4797   3.5220  26.9332
+            545   544.0   3.2290  31.7087   3.2988  30.2321
+            546   545.0   4.2272  35.9360   4.3186  34.5507
+            547   546.0   4.6945  40.6305   4.7961  39.3467
+            548   547.0   5.2010  45.8315   5.3134  44.6602
+            549   548.0   5.7459  51.5774   5.8702  50.5304
+            550   549.0   6.3315  57.9089   6.4684  56.9988
+            551   550.0   6.9644  64.8734   7.1150  64.1138
+            552   551.0   7.6384  72.5118   7.8036  71.9174
+            553   552.0   8.3663  80.8781   8.5472  80.4646
+            554   553.0   9.1469  90.0250   9.3447  89.8093
+            555   554.0   9.9750 100.0000  10.1907 100.0000
+ 
+
+       ***********************************************************
+       *      PROBABILITY DISTRIBUTION FUNCTION (HISTOGRAM)      *
+       *           FOR THE INITIATING DRIVING FORCES             *
+       *              FOR TRANSIENT SEQUENCE     1               *
+       ***********************************************************
+             ===============================================
+                                 RELATIVE    CUMULATIVE
+               KI(ksi-in^1/2)    DENSITY    DISTRIBUTION
+               (bin midpoint)       (%)          (%)
+             ===============================================
+                  19.00           25.0000       25.0000
+                  21.00           50.0000       75.0000
+                  23.00           25.0000      100.0000
+             ===============================================
+                                 RELATIVE    CUMULATIVE
+               KI(ksi-in^1/2)    DENSITY    DISTRIBUTION
+               (bin midpoint)       (%)          (%)
+             ===============================================
+ 
+  ====================================================================================================
+                       FAILURE MECHANISM REPORT FOR TRANSIENT SEQUENCE     1
+  ====================================================================================================
+ 
+                                                              NUMBER OF     % OF TOTAL   
+                                                                FAILURE        FAILURE   
+                                                                 TRIALS         TRIALS   
+ 
+   UNSTABLE DUCTILE TEARING                                          0           0.00
+   STABLE DUCTILE TEAR TO PLASTIC INSTABILITY                        0           0.00
+   CLEAVAGE PROPAGATION TO PLASTIC INSTABILITY                     491           8.63
+   STABLE DUCTILE TEAR EXCEEDS  WALL DEPTH FAILURE CRITERIA          0           0.00
+   CLEAVAGE PROPAGATION EXCEEDS WALL DEPTH FAILURE CRITERIA       5200          91.37
+ 
+ 
+          ***************************************************
+          ***************************************************
+          *               MULTIPLE FLAW STATISTICS          *
+          ***************************************************
+          ***************************************************
+ 
+                           NUMBER OF OCCASIONS             
+                         WHEN SIMULATED RPV HAD            
+ 
+                  X FLAWS        % OF         X FLAWS        % OF
+   X FLAWS     WITH CPI > 0    TOTAL CPI    WITH CPF > 0   TOTAL CPF
+ 
+      1             4          100.00            4          100.00
+ 
+     TOTALS         4          100.00            4          100.00
+ 
+     Note: One Occasion is 1 simulated RPV subjected to 1 transient
+
+               DATE: 17-Mar-2022  TIME: 16:54:53
+
