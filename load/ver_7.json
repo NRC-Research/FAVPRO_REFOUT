@@ -7,7 +7,7 @@
     "material properties" : {
         "base" : {
             "temperature dependent" : false,
-            "reference temperature" : "488.0 F",
+            "reference temperature" : "70.0 F",
             "thermal conductivity" : "24.0 BTU/(h ft F)",
             "specific heat" : "0.12 BTU/(lbm F)",
             "density" : "489.0 lbm/ft^3",
@@ -17,7 +17,7 @@
         },
         "clad" : {
             "temperature dependent" : false,
-            "reference temperature" : "488.0 F",
+            "reference temperature" : "70.0 F",
             "thermal conductivity" : "10.0 BTU/(h ft F)",
             "specific heat" : "0.12 BTU/(lbm F)",
             "density" : "489.0 lbm/ft^3",
@@ -29,8 +29,8 @@
     "analysis options" : {
         "stress-free temperature" : "488.0 F",
         "crack-face pressure loading" : false,
-        "axial residual stresses in weld" : true,
-        "circumferential residual stresses in weld" : true
+        "axial residual stresses in weld" : false,
+        "circumferential residual stresses in weld" : false
     },
     "transients" : {
         "total time" : "250.0 m",
@@ -62,8 +62,8 @@
                         250.0
                     ],
                     "P(t)" : [
-                        2.2501,
-                        4.61e-2
+                        2.250,
+                        4.6e-2
                     ],
                     "t units" : "m",
                     "P(t) units" : "ksi"
