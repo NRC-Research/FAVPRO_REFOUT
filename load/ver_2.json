@@ -8,7 +8,7 @@
         "base" : {
             "temperature dependent" : true,
             "reference temperature" : "70.0 F",
-            "density" : "490.06 lbm/ft^3",
+            "density" : "490.1 lbm/ft^3",
             "thermal conductivity table" : {
                 "T" : [
                     69.8,
@@ -169,8 +169,8 @@
     "analysis options" : {
         "stress-free temperature" : "488.0 F",
         "crack-face pressure loading" : true,
-        "axial residual stresses in weld" : false,
-        "circumferential residual stresses in weld" : false
+        "axial residual stresses in weld" : true,
+        "circumferential residual stresses in weld" : true
     },
     "transients" : {
         "total time" : "50.0 m",
@@ -251,12 +251,12 @@
                         50.0
                     ],
                     "P(t)" : [
-                        2.2771,
-                        1.578,
-                        1.2444,
-                        1.1617,
-                        0.8151,
-                        0.3191
+                        2.2772,
+                        1.5781,
+                        1.2445,
+                        1.1618,
+                        0.8152,
+                        0.3192
                     ],
                     "t units" : "m",
                     "P(t) units" : "ksi"
