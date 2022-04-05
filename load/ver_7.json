@@ -1,75 +1,69 @@
 {
-    "vessel geometry" : {
-        "internal radius" : "86.0 in",
-        "wall thickness" : "8.75 in",
-        "clad thickness" : "0.25 in"
+  "vessel geometry" : {
+    "internal radius" : "86.0 in",
+    "wall thickness" : "8.75 in",
+    "clad thckness" :"0.25 in"
+  },
+  "material properties" : {
+    "base" : {
+      "temperature dependent" : false,
+      "reference temperature" : "70.0 F",
+      "density" : "489.0 lbm/ft^3",
+      "thermal conductivity" : "24.0 BTU/(hr ft F)",
+      "specific heat" : "0.12 BTU/(lbm F)",
+      "young's elastic modulus" : "28000.0 ksi",
+      "thermal expansion coefficient" : "0.00000777 1/F",
+      "poisson's ratio" : 0.3
     },
-    "material properties" : {
-        "base" : {
-            "temperature dependent" : false,
-            "reference temperature" : "70.0 F",
-            "thermal conductivity" : "24.0 BTU/(h ft F)",
-            "specific heat" : "0.12 BTU/(lbm F)",
-            "density" : "489.0 lbm/ft^3",
-            "young's elastic modulus" : "2.8e4 ksi",
-            "thermal expansion coefficient" : "7.77e-6 1/F",
-            "poisson's ratio" : 0.3
-        },
-        "clad" : {
-            "temperature dependent" : false,
-            "reference temperature" : "70.0 F",
-            "thermal conductivity" : "10.0 BTU/(h ft F)",
-            "specific heat" : "0.12 BTU/(lbm F)",
-            "density" : "489.0 lbm/ft^3",
-            "young's elastic modulus" : "2.28e4 ksi",
-            "thermal expansion coefficient" : "9.45e-6 1/F",
-            "poisson's ratio" : 0.3
-        }
-    },
-    "analysis options" : {
-        "stress-free temperature" : "488.0 F",
-        "crack-face pressure loading" : false,
-        "axial residual stresses in weld" : false,
-        "circumferential residual stresses in weld" : false
-    },
-    "transients" : {
-        "total time" : "250.0 m",
-        "dt" : "0.1 m",
-        "transient list" : [
-            {
-                "pfm transient number" : 1,
-                "thermal-hydraulic sequence number" : 1,
-                "convective heat transfer coefficient history table" : {
-                    "t" : [
-                        0.0,
-                        250.0
-                    ],
-                    "h(t)" : [
-                        5.0e3,
-                        5.0e3
-                    ],
-                    "t units" : "m",
-                    "h(t) units" : "BTU/(hr ft^2 F)"
-                },
-                "coolant temperature history table" : {
-                    "initial coolant temperature" : "550.0 F",
-                    "lowest transient temperature" : "70.0 F",
-                    "decay constant" : "2.5e-2 1/m"
-                },
-                "pressure history table" : {
-                    "t" : [
-                        0.0,
-                        250.0
-                    ],
-                    "P(t)" : [
-                        2.250,
-                        4.6e-2
-                    ],
-                    "t units" : "m",
-                    "P(t) units" : "ksi"
-                }
-            }
-        ]
+    "clad" : {
+      "temperature dependent" : false,
+      "reference temperature" : "70.0 F",
+      "density" : "489.0 lbm/ft^3",
+      "thermal conductivity" : "10.0 BTU/(hr ft F)",
+      "specific heat" : "0.12 BTU/(lbm F)",
+      "young's elastic modulus" : "22800.0 ksi",
+      "thermal expansion coefficient" : "0.00000945 1/F",
+      "poisson's ratio" : 0.3
     }
-}
-
+  },
+  "analysis options" : {
+    "stress-free temperature" : "488.0 ",
+    "crack-face pressure loading" : false,
+    "axial residual stresses in weld" : false,
+    "circumferential residual stresses in weld" : false
+  },
+  "transients" : {
+    "total time" : "250.0 m",
+    "dt" : "0.1 m",
+    "transient list" : [
+      {
+        "pfm transient number" : 1,
+        "thermal-hydraulic sequence number" : 1,
+        "convective heat transfer coefficient history table" : {
+          "t" : [
+            0.0, 250.0
+          ],
+          "h(t)" : [
+            5000.0, 5000.0
+          ],
+          "t units" : "m",
+          "h(t) units" : "BTU/(hr ft^2 F)"
+        },
+        "coolant temperature history table" : {
+          "initial coolant temperature" : "550 F",
+          "lowest transient temperature" : "70 F",
+          "decay constant" : 0.025
+        },
+        "pressure history table" : {
+          "t" : [
+            0.0, 250.0
+          ],
+          "P(t)" : [
+            2.25, 0.046
+          ],
+          "t units" : "m",
+          "P(t) units" : "ksi"
+        }
+      }
+    }
+  }
