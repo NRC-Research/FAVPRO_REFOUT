@@ -37,20 +37,20 @@
       {
         "pfm transient number" : 1,
         "thermal-hydraulic sequence number" : 2,
-        "start time" : 0.0,
-        "end time" : 300.0
+        "start time" : "0.0 m",
+        "end time" : "300.0 m"
       },
       {
         "pfm transient number" : 2,
         "thermal-hydraulic sequence number" : 3,
-        "start time" : 5.0,
-        "end time" : 200.0
+        "start time" : "5.0 m",
+        "end time" : "200.0 m"
       },
       {
         "pfm transient number" : 3,
         "thermal-hydraulic sequence number" : 33,
-        "start time" : 3.0,
-        "end time" : 33.0
+        "start time" : "3.0 m",
+        "end time" : "33.0 m"
       }
     ],
     "subregions" : [
