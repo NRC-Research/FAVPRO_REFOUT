@@ -2,7 +2,7 @@
   "vessel geometry" : {
     "internal radius" : "86.0 in",
     "wall thickness" : "8.5 in",
-    "clad thckness" :"0.156 in"
+    "clad thickness" :"0.156 in"
   },
   "material properties" : {
     "base" : {
@@ -23,7 +23,7 @@
           22.2
         ],
         "T units" : "F",
-        "k(T) units" : "BTU/(hr ft F)"
+        "k(T) units" : "BTU/(h ft F)"
       },
       "specific heat table" : {
         "T" : [
@@ -95,7 +95,7 @@
           11.9
         ],
         "T units" : "F",
-        "k(T) units" : "BTU/(hr ft F)"
+        "k(T) units" : "BTU/(h ft F)"
       },
       "specific heat table" : {
         "T" : [

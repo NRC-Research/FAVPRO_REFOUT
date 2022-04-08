@@ -2,14 +2,14 @@
   "vessel geometry" : {
     "internal radius" : "110.37 in",
     "wall thickness" : "5.83 in",
-    "clad thckness" :"0.21 in"
+    "clad thickness" :"0.21 in"
   },
   "material properties" : {
     "base" : {
       "temperature dependent" : false,
       "reference temperature" : "70.0 F",
       "density" : "489.0 lbm/ft^3",
-      "thermal conductivity" : "24.0 BTU/(hr ft F)",
+      "thermal conductivity" : "24.0 BTU/(h ft F)",
       "specific heat" : "0.12 BTU/(lbm F)",
       "young's elastic modulus" : "28000.0 ksi",
       "thermal expansion coefficient" : "0.00000777 1/F",
@@ -33,7 +33,7 @@
           11.9
         ],
         "T units" : "F",
-        "k(T) units" : "BTU/(hr ft F)"
+        "k(T) units" : "BTU/(h ft F)"
       },
       "specific heat table" : {
         "T" : [
