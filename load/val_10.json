@@ -149,7 +149,7 @@
     }
   },
   "analysis options" : {
-    "stress-free temperature" : "544.8 ",
+    "stress-free temperature" : "544.8 F",
     "crack-face pressure loading" : true,
     "axial residual stresses in weld" : true,
     "circumferential residual stresses in weld" : true
