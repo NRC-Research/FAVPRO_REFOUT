@@ -112,7 +112,7 @@
         "coolant temperature history table" : {
           "initial coolant temperature" : "550 F",
           "lowest transient temperature" : "70 F",
-          "decay constant" : 5.0
+          "decay constant" : "5.0 1/m"
         },
         "pressure history table" : {
           "t" : [
@@ -141,7 +141,7 @@
         "coolant temperature history table" : {
           "initial coolant temperature" : "544.8 F",
           "lowest transient temperature" : "50.4 F",
-          "decay constant" : 1.0
+          "decay constant" : "1.0 1/m"
         },
         "pressure history table" : {
           "t" : [
@@ -170,7 +170,7 @@
         "coolant temperature history table" : {
           "initial coolant temperature" : "515 F",
           "lowest transient temperature" : "60 F",
-          "decay constant" : 3.0
+          "decay constant" : "3.0 1/m"
         },
         "pressure history table" : {
           "t" : [
@@ -199,7 +199,7 @@
         "coolant temperature history table" : {
           "initial coolant temperature" : "515 F",
           "lowest transient temperature" : "150 F",
-          "decay constant" : 10.0
+          "decay constant" : "10.0 1/m"
         },
         "pressure history table" : {
           "t" : [
