@@ -2,14 +2,14 @@
   "vessel geometry" : {
     "internal radius" : "86.0 in",
     "wall thickness" : "8.75 in",
-    "clad thckness" :"0.25 in"
+    "clad thickness" :"0.25 in"
   },
   "material properties" : {
     "base" : {
       "temperature dependent" : false,
       "reference temperature" : "70.0 F",
       "density" : "489.0 lbm/ft^3",
-      "thermal conductivity" : "24.0 BTU/(hr ft F)",
+      "thermal conductivity" : "24.0 BTU/(h ft F)",
       "specific heat" : "0.12 BTU/(lbm F)",
       "young's elastic modulus" : "28000.0 ksi",
       "thermal expansion coefficient" : "0.00000777 1/F",
@@ -19,7 +19,7 @@
       "temperature dependent" : false,
       "reference temperature" : "70.0 F",
       "density" : "489.0 lbm/ft^3",
-      "thermal conductivity" : "10.0 BTU/(hr ft F)",
+      "thermal conductivity" : "10.0 BTU/(h ft F)",
       "specific heat" : "0.12 BTU/(lbm F)",
       "young's elastic modulus" : "22800.0 ksi",
       "thermal expansion coefficient" : "0.00000945 1/F",
@@ -27,7 +27,7 @@
     }
   },
   "analysis options" : {
-    "stress-free temperature" : "488.0 ",
+    "stress-free temperature" : "488.0 F",
     "crack-face pressure loading" : false,
     "axial residual stresses in weld" : false,
     "circumferential residual stresses in weld" : false
@@ -52,7 +52,7 @@
         "coolant temperature history table" : {
           "initial coolant temperature" : "550 F",
           "lowest transient temperature" : "70 F",
-          "decay constant" : 0.025
+          "decay constant" : "0.025 1/m"
         },
         "pressure history table" : {
           "t" : [

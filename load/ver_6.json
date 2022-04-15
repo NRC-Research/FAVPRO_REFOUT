@@ -2,14 +2,14 @@
   "vessel geometry" : {
     "internal radius" : "110.37 in",
     "wall thickness" : "5.83 in",
-    "clad thckness" :"0.21 in"
+    "clad thickness" :"0.21 in"
   },
   "material properties" : {
     "base" : {
       "temperature dependent" : false,
       "reference temperature" : "70.0 F",
       "density" : "489.0 lbm/ft^3",
-      "thermal conductivity" : "24.0 BTU/(hr ft F)",
+      "thermal conductivity" : "24.0 BTU/(h ft F)",
       "specific heat" : "0.12 BTU/(lbm F)",
       "young's elastic modulus" : "28000.0 ksi",
       "thermal expansion coefficient" : "0.00000777 1/F",
@@ -33,20 +33,20 @@
           11.9
         ],
         "T units" : "F",
-        "k(T) units" : "BTU/(hr ft F)"
+        "k(T) units" : "BTU/(h ft F)"
       },
       "specific heat table" : {
         "T" : [
           70.0, 100.0, 150.0, 200.0, 250.0,
           300.0, 350.0, 400.0, 450.0, 500.0,
           550.0, 600.0, 650.0, 700.0, 750.0,
-          800.0, 0.0
+          800.0
         ],
         "c(T)" : [
           0.1158, 0.1185, 0.1196, 0.1208, 0.1232,
           0.1256, 0.1258, 0.1281, 0.1291, 0.1305,
           0.1306, 0.1327, 0.1335, 0.1348, 0.1356,
-          0.1367, 0.0
+          0.1367
         ],
         "T units" : "F",
         "c(T) units" : "BTU/(lbm F)"
@@ -87,7 +87,7 @@
     }
   },
   "analysis options" : {
-    "stress-free temperature" : "488.0 ",
+    "stress-free temperature" : "488.0 F",
     "crack-face pressure loading" : false,
     "axial residual stresses in weld" : false,
     "circumferential residual stresses in weld" : true
@@ -112,7 +112,7 @@
         "coolant temperature history table" : {
           "initial coolant temperature" : "550 F",
           "lowest transient temperature" : "70 F",
-          "decay constant" : 5.0
+          "decay constant" : "5.0 1/m"
         },
         "pressure history table" : {
           "t" : [
@@ -141,7 +141,7 @@
         "coolant temperature history table" : {
           "initial coolant temperature" : "544.8 F",
           "lowest transient temperature" : "50.4 F",
-          "decay constant" : 1.0
+          "decay constant" : "1.0 1/m"
         },
         "pressure history table" : {
           "t" : [
@@ -170,7 +170,7 @@
         "coolant temperature history table" : {
           "initial coolant temperature" : "515 F",
           "lowest transient temperature" : "60 F",
-          "decay constant" : 3.0
+          "decay constant" : "3.0 1/m"
         },
         "pressure history table" : {
           "t" : [
@@ -199,7 +199,7 @@
         "coolant temperature history table" : {
           "initial coolant temperature" : "515 F",
           "lowest transient temperature" : "150 F",
-          "decay constant" : 10.0
+          "decay constant" : "10.0 1/m"
         },
         "pressure history table" : {
           "t" : [

@@ -2,7 +2,7 @@
   "vessel geometry" : {
     "internal radius" : "78.465 in",
     "wall thickness" : "8.149 in",
-    "clad thckness" :"0.276 in"
+    "clad thickness" :"0.276 in"
   },
   "material properties" : {
     "base" : {
@@ -17,7 +17,7 @@
           21.8, 22.4, 21.8, 22.3
         ],
         "T units" : "F",
-        "k(T) units" : "BTU/(hr ft F)"
+        "k(T) units" : "BTU/(h ft F)"
       },
       "specific heat table" : {
         "T" : [
@@ -71,14 +71,14 @@
           8.6, 9.8, 11.1, 11.4
         ],
         "T units" : "F",
-        "k(T) units" : "BTU/(hr ft F)"
+        "k(T) units" : "BTU/(h ft F)"
       },
       "specific heat table" : {
         "T" : [
-          69.8, 300.2, 548.6, 613.4, 0.0
+          69.8, 300.2, 548.6, 613.4
         ],
         "c(T)" : [
-          0.1148, 0.1235, 0.1301, 0.1313, 0.0
+          0.1148, 0.1235, 0.1301, 0.1313
         ],
         "T units" : "F",
         "c(T) units" : "BTU/(lbm F)"
@@ -115,7 +115,7 @@
     }
   },
   "analysis options" : {
-    "stress-free temperature" : "488.0 ",
+    "stress-free temperature" : "488.0 F",
     "crack-face pressure loading" : true,
     "axial residual stresses in weld" : false,
     "circumferential residual stresses in weld" : false
