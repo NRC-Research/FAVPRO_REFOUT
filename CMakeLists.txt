@@ -4,22 +4,6 @@ else()
   set(SCRIPT_EXT "sh")
 endif()
 
-foreach(case_num RANGE 1 11)
-  configure_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/FAVLOADin/LOAD_test_val_${case_num}.out"
-    "${CMAKE_CURRENT_BINARY_DIR}/FAVLOADin/LOAD_test_val_${case_num}.out"
-    COPYONLY
-  )
-endforeach()
-
-foreach(case_num RANGE 1 9)
-  configure_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/FAVLOADin/LOAD_test_ver_${case_num}.out"
-    "${CMAKE_CURRENT_BINARY_DIR}/FAVLOADin/LOAD_test_ver_${case_num}.out"
-    COPYONLY
-  )
-endforeach()
-
 foreach(case_num RANGE 1 12)
   foreach(ext ".in" ".out.orig" ".cmd")
     configure_file(

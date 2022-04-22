@@ -1,3 +1,3 @@
 PFM_test_val_3.in
-../FAVLOADin/LOAD_test_val_3.out
+../../../../../tests/verification/outputs/load/val_3.out
 PFM_test_val_3.out

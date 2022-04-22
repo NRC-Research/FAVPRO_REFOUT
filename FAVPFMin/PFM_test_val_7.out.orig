@@ -47,7 +47,7 @@
 
 
                FAVPFM INPUT FILE NAME       = PFM_test_val_7.in                                               
-               FAVLOAD OUTPUT FILE NAME     = ../FAVLOADin/LOAD_test_val_7.out                                
+               FAVLOAD OUTPUT FILE NAME     = ../../../../../tests/verification/outputs/load/val_7.out                                
                FAVPFM OUTPUT FILE NAME      = PFM_test_val_7.out                                              
                FAVPFM INPUT ECHO FILE NAME  = PFM_test_val_7.echo                                             
 
