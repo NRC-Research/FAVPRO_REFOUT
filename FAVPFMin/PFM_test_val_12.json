@@ -53,8 +53,7 @@
         "height" : "180.0 in",
         "fusion area" : "0.0 in^2",
         "orientation" : 0,
-        "CF override" : 0.0,
-        "upper shelf energy" : "100.0 lbf ft"
+        "CF override" : 0.0
       }
     ]
   }
