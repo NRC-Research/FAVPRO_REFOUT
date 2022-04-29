@@ -48,8 +48,7 @@
         "height" : "117.3 in",
         "fusion area" : "689.5 in^2",
         "orientation" : 1,
-        "CF override" : 0.0,
-        "upper shelf energy" : "0.0 lbf ft"
+        "CF override" : 0.0
       },
       {
         "id" : 2,
@@ -70,8 +69,7 @@
         "height" : "117.3 in",
         "fusion area" : "689.5 in^2",
         "orientation" : 1,
-        "CF override" : 0.0,
-        "upper shelf energy" : "0.0 lbf ft"
+        "CF override" : 0.0
       },
       {
         "id" : 3,
@@ -92,8 +90,7 @@
         "height" : "117.3 in",
         "fusion area" : "689.5 in^2",
         "orientation" : 1,
-        "CF override" : 0.0,
-        "upper shelf energy" : "0.0 lbf ft"
+        "CF override" : 0.0
       },
       {
         "id" : 4,
@@ -114,8 +111,7 @@
         "height" : "54.37 in",
         "fusion area" : "373.8 in^2",
         "orientation" : 1,
-        "CF override" : 0.0,
-        "upper shelf energy" : "0.0 lbf ft"
+        "CF override" : 0.0
       },
       {
         "id" : 5,
@@ -136,8 +132,7 @@
         "height" : "54.37 in",
         "fusion area" : "373.8 in^2",
         "orientation" : 1,
-        "CF override" : 0.0,
-        "upper shelf energy" : "0.0 lbf ft"
+        "CF override" : 0.0
       },
       {
         "id" : 6,
@@ -158,8 +153,7 @@
         "height" : "54.37 in",
         "fusion area" : "373.8 in^2",
         "orientation" : 1,
-        "CF override" : 0.0,
-        "upper shelf energy" : "0.0 lbf ft"
+        "CF override" : 0.0
       },
       {
         "id" : 7,
@@ -180,8 +174,7 @@
         "height" : "1.25 in",
         "fusion area" : "4183.0 in^2",
         "orientation" : 2,
-        "CF override" : 0.0,
-        "upper shelf energy" : "0.0 lbf ft"
+        "CF override" : 0.0
       },
       {
         "id" : 8,
@@ -202,8 +195,7 @@
         "height" : "117.3 in",
         "fusion area" : "0.0 in^2",
         "orientation" : 0,
-        "CF override" : 0.0,
-        "upper shelf energy" : "0.0 lbf ft"
+        "CF override" : 0.0
       },
       {
         "id" : 9,
@@ -224,8 +216,7 @@
         "height" : "117.3 in",
         "fusion area" : "0.0 in^2",
         "orientation" : 0,
-        "CF override" : 0.0,
-        "upper shelf energy" : "0.0 lbf ft"
+        "CF override" : 0.0
       },
       {
         "id" : 10,
@@ -246,8 +237,7 @@
         "height" : "117.3 in",
         "fusion area" : "0.0 in^2",
         "orientation" : 0,
-        "CF override" : 0.0,
-        "upper shelf energy" : "0.0 lbf ft"
+        "CF override" : 0.0
       },
       {
         "id" : 11,
@@ -268,8 +258,7 @@
         "height" : "54.37 in",
         "fusion area" : "0.0 in^2",
         "orientation" : 0,
-        "CF override" : 0.0,
-        "upper shelf energy" : "0.0 lbf ft"
+        "CF override" : 0.0
       },
       {
         "id" : 12,
@@ -290,8 +279,7 @@
         "height" : "54.37 in",
         "fusion area" : "0.0 in^2",
         "orientation" : 0,
-        "CF override" : 0.0,
-        "upper shelf energy" : "0.0 lbf ft"
+        "CF override" : 0.0
       },
       {
         "id" : 13,
@@ -312,8 +300,7 @@
         "height" : "54.37 in",
         "fusion area" : "0.0 in^2",
         "orientation" : 0,
-        "CF override" : 0.0,
-        "upper shelf energy" : "0.0 lbf ft"
+        "CF override" : 0.0
       }
     ]
   }
