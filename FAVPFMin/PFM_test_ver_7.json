@@ -10,7 +10,7 @@
       "restart" : 0,
       "embrittlement model" : 2006,
       "normal coolant temperature" : "532.0 F",
-      "plant operating time" : 54.0,
+      "plant operating time" : "54.0 yr",
       "ductile tearing model" : false,
       "ductile tearing checks" : true,
       "detailed reports" : true,
