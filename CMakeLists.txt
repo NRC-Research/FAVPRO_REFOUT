@@ -5,7 +5,7 @@ else()
 endif()
 
 foreach(case_num RANGE 1 12)
-  foreach(ext ".in" ".out.orig" ".cmd")
+  foreach(ext ".in" ".out.orig")
     configure_file(
       "${CMAKE_CURRENT_SOURCE_DIR}/FAVPFMin/PFM_test_val_${case_num}${ext}"
       "${CMAKE_CURRENT_BINARY_DIR}/FAVPFMin/PFM_test_val_${case_num}${ext}"
@@ -13,14 +13,14 @@ foreach(case_num RANGE 1 12)
     )
   endforeach()
   configure_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/run_pfm_test_val.${SCRIPT_EXT}.template"
+    "${CMAKE_CURRENT_SOURCE_DIR}/FAVPFMin/run_pfm_test_val_${case_num}.${SCRIPT_EXT}"
     "${CMAKE_CURRENT_BINARY_DIR}/FAVPFMin/run_pfm_test_val_${case_num}.${SCRIPT_EXT}"
-    @ONLY
+    COPYONLY
   )
 endforeach()
 
 foreach(case_num RANGE 1 24)
-  foreach(ext ".in" ".out.orig" ".cmd")
+  foreach(ext ".in" ".out.orig")
     configure_file(
       "${CMAKE_CURRENT_SOURCE_DIR}/FAVPFMin/PFM_test_ver_${case_num}${ext}"
       "${CMAKE_CURRENT_BINARY_DIR}/FAVPFMin/PFM_test_ver_${case_num}${ext}"
@@ -28,9 +28,9 @@ foreach(case_num RANGE 1 24)
     )
   endforeach()
   configure_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/run_pfm_test_ver.${SCRIPT_EXT}.template"
+    "${CMAKE_CURRENT_SOURCE_DIR}/FAVPFMin/run_pfm_test_ver_${case_num}.${SCRIPT_EXT}"
     "${CMAKE_CURRENT_BINARY_DIR}/FAVPFMin/run_pfm_test_ver_${case_num}.${SCRIPT_EXT}"
-    @ONLY
+    COPYONLY
   )
 endforeach()
 

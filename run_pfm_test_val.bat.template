@@ -1,5 +1,0 @@
-del PFM_test_val_@case_num@.out
-%1 < PFM_test_val_@case_num@.cmd
-if %errorlevel% neq 0 exit /b %errorlevel%
-move INITIATE.DAT PFM_test_val_@case_num@_INITIATE.DAT
-move FAILURE.DAT PFM_test_val_@case_num@_FAILURE.DAT

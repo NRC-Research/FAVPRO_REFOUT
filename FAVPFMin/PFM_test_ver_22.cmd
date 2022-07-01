@@ -1,4 +1,0 @@
-PFM_test_ver_22.in
-../../../../../tests/verification/outputs/load/val_7.out
-PFM_test_ver_22.out
-../FlawFiles/AFF54.dat
