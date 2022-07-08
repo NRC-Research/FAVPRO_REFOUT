@@ -35,7 +35,7 @@ foreach(case_num RANGE 1 24)
 endforeach()
 
 foreach(case_num RANGE 1 1)
-  foreach(ext ".in" ".out.orig" ".cmd" "_FAILURE.DAT" "_INITIATE.DAT")
+  foreach(ext ".in" ".out.orig" "_FAILURE.DAT" "_INITIATE.DAT")
     configure_file(
       "${CMAKE_CURRENT_SOURCE_DIR}/FAVPOSTin/POST_test_ver_${case_num}${ext}"
       "${CMAKE_CURRENT_BINARY_DIR}/FAVPOSTin/POST_test_ver_${case_num}${ext}"
@@ -43,14 +43,14 @@ foreach(case_num RANGE 1 1)
     )
   endforeach()
   configure_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/run_post_test_ver.${SCRIPT_EXT}.template"
+    "${CMAKE_CURRENT_SOURCE_DIR}/FAVPOSTin/run_post_test_ver_${case_num}.${SCRIPT_EXT}"
     "${CMAKE_CURRENT_BINARY_DIR}/FAVPOSTin/run_post_test_ver_${case_num}.${SCRIPT_EXT}"
     @ONLY
   )
 endforeach()
 
 foreach(case_num RANGE 2 2)
-  foreach(ext ".in" ".out.orig" ".cmd")
+  foreach(ext ".in" ".out.orig")
     configure_file(
       "${CMAKE_CURRENT_SOURCE_DIR}/FAVPOSTin/POST_test_ver_${case_num}${ext}"
       "${CMAKE_CURRENT_BINARY_DIR}/FAVPOSTin/POST_test_ver_${case_num}${ext}"
@@ -58,7 +58,7 @@ foreach(case_num RANGE 2 2)
     )
   endforeach()
   configure_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/run_post_test_ver.${SCRIPT_EXT}.template"
+    "${CMAKE_CURRENT_SOURCE_DIR}/FAVPOSTin/run_post_test_ver_${case_num}.${SCRIPT_EXT}"
     "${CMAKE_CURRENT_BINARY_DIR}/FAVPOSTin/run_post_test_ver_${case_num}.${SCRIPT_EXT}"
     @ONLY
   )

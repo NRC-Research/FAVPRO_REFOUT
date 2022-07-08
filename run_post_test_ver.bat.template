@@ -1,3 +1,0 @@
-del POST_test_ver_@case_num@.out
-%1 < POST_test_ver_@case_num@.cmd
-if %errorlevel% neq 0 exit /b %errorlevel%
