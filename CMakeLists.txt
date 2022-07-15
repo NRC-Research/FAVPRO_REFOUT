@@ -5,7 +5,7 @@ else()
 endif()
 
 foreach(case_num RANGE 1 12)
-  foreach(ext ".in" ".out.orig")
+  foreach(ext ".in" ".out.orig" ".json")
     configure_file(
       "${CMAKE_CURRENT_SOURCE_DIR}/FAVPFMin/PFM_test_val_${case_num}${ext}"
       "${CMAKE_CURRENT_BINARY_DIR}/FAVPFMin/PFM_test_val_${case_num}${ext}"
@@ -20,7 +20,7 @@ foreach(case_num RANGE 1 12)
 endforeach()
 
 foreach(case_num RANGE 1 24)
-  foreach(ext ".in" ".out.orig")
+  foreach(ext ".in" ".out.orig" ".json")
     configure_file(
       "${CMAKE_CURRENT_SOURCE_DIR}/FAVPFMin/PFM_test_ver_${case_num}${ext}"
       "${CMAKE_CURRENT_BINARY_DIR}/FAVPFMin/PFM_test_ver_${case_num}${ext}"
