@@ -1,0 +1,60 @@
+{
+  "probabilistic simulation" : {
+    "probabilistic simulation properties" : {
+      "rpv simulations" : 100,
+      "flaw population" : 1,
+      "initiation growth arrest trials" : 100,
+      "warm prestress" : 0,
+      "category-3 flaw analysis" : false,
+      "child subregion reports" : false,
+      "restart" : 0,
+      "embrittlement model" : 992,
+      "normal coolant temperature" : "556.0 F",
+      "plant operating time" : "60.0 yr",
+      "ductile tearing model" : true,
+      "ductile tearing checks" : false,
+      "detailed reports" : true,
+      "flow stress" : "80.0 ksi",
+      "max K" : 800.0,
+      "arrest model" : 2,
+      "resampling" : false,
+      "vessel failure normalized crack depth" : 0.9,
+      "stdev mean local fluence" : 0.00000001,
+      "stdev local fluence" : 0.00000001,
+      "stdev Cu weld" : 0.00000001,
+      "stdev Ni weld" : 0.00000001,
+      "stdev P weld" : 0.00000001,
+      "stdev Cu plate" : 0.00000001,
+      "stdev Ni plate" : 0.00000001,
+      "stdev P plate" : 0.00000001
+    },
+    "flaw tracking" : {
+      "transient number" : 1,
+      "simulation number" : 2,
+      "flaw number" : 1
+    },
+    "subregions" : [
+      {
+        "id" : 1,
+        "left child" : 1,
+        "right child" : 1,
+        "major region" : 1,
+        "fluence" : 4.0,
+        "Cu" : 0.2,
+        "Ni" : 0.6,
+        "P" : 0.1,
+        "Mn" : 1.0,
+        "DT30 shift" : 2,
+        "Cu sat" : 0,
+        "rtndt0" : "-30.0 F",
+        "sig rtndt0" : "0.0 F",
+        "irad shift" : 11,
+        "angle" : "360.0 deg",
+        "height" : "180.0 in",
+        "fusion area" : "0.0 in^2",
+        "orientation" : 0,
+        "CF override" : 0.0
+      }
+    ]
+  }
+}

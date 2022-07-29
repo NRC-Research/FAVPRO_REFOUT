@@ -1,0 +1,9 @@
+{
+  "deterministic history" : {
+    "weld residual stress" : false,
+    "flaw kind" : "ID",
+    "flaw orientation" : "Axial",
+    "flaw depth" : "2.188 in",
+    "aspect ratio" : 0.0
+  }
+}

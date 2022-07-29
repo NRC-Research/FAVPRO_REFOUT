@@ -1,0 +1,10 @@
+{
+  "deterministic history" : {
+    "weld residual stress" : false,
+    "flaw kind" : "embedded",
+    "flaw orientation" : "Circumferential",
+    "flaw depth" : "0.131 in",
+    "aspect ratio" : 3.0,
+    "RPV ID to crack tip" : "0.313 in"
+  }
+}
