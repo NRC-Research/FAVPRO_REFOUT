@@ -1,151 +1,70 @@
-********************************************************************************
-* ====================                                                         *
-*     Record GEOM                                                              *
-* ====================                                                         *
-*------------------------------------------------------------------------------*
-* IRAD = INTERNAL RADIUS OF PRESSURE VESSEL                               [IN] *
-* W    = THICKNESS OF PRESSURE VESSEL WALL (INCLUDING CLADDING)           [IN] *
-* CLTH = CLADDING THICKNESS                                               [IN] *
-*------------------------------------------------------------------------------*
-********************************************************************************
-GEOM IRAD=86 W=8.75 CLTH=0.25
-********************************************************************************
-* ===========================                                                  *
-*    Record BASE                                                               *
-* ===========================                                                  *
-*------------------------------------------------------------------------------*
-* K     = THERMAL CONDUCTIVITY                                   [BTU/HR-FT-F] *
-* C     = SPECIFIC HEAT                                            [BTU/LBM-F] *
-* RHO   = DENSITY                                                  [LBM/FT**3] *
-* E     = YOUNG'S ELASTIC MODULUS                                        [KSI] *
-* ALPHA = THERMAL EXPANSION COEFFICIENT                                [F**-1] *
-* NU    = POISSON'S RATIO                                                  [-] *
-* NTE   = TEMPERATURE DEPENDANCY FLAG                                          *
-* NTE   = 0 ==> PROPERTIES ARE TEMPERATURE INDEPENDENT (CONSTANT)              *
-* NTE   = 1 ==> PROPERTIES ARE TEMPERATURE DEPENDENT                           *
-* IF NTE EQUAL TO 1, THEN ADDITIONAL DATA RECORDS ARE REQUIRED                 *
-*------------------------------------------------------------------------------*
-********************************************************************************
-BASE K=24 C=0.12 RHO=489 E=28000 ALPHA=0.00000777 NU=0.3 NTE=0
-********************************************************************************
-********************************************************************************
-* ===========================                                                  *
-*    Record CLAD                                                               *
-* ===========================                                                  *
-*------------------------------------------------------------------------------*
-* K     = THERMAL CONDUCTIVITY                                   [BTU/HR-FT-F] *
-* C     = SPECIFIC HEAT                                            [BTU/LBM-F] *
-* RHO   = DENSITY                                                  [LBM/FT**3] *
-* E     = YOUNG'S ELASTIC MODULUS                                        [KSI] *
-* ALPHA = THERMAL EXPANSION COEFFICIENT                                [F**-1] *
-* NU    = POISSON'S RATIO                                                  [-] *
-* NTE   = TEMPERATURE DEPENDANCY FLAG                                          *
-* NTE   = 0 ==> PROPERTIES ARE TEMPERATURE INDEPENDENT (CONSTANT)              *
-* NTE   = 1 ==> PROPERTIES ARE TEMPERATURE DEPENDENT                           *
-* IF NTE EQUAL TO 1, THEN ADDITIONAL DATA RECORDS ARE REQUIRED                 *
-*------------------------------------------------------------------------------*
-********************************************************************************
-CLAD K=10 C=0.12 RHO=489 E=22800 ALPHA=0.00000945 NU=0.3 NTE=0
-********************************************************************************
-********************************************************************************
-* ====================                                                         *
-*     Record SFRE                                                              *
-* ====================                                                         *
-*------------------------------------------------------------------------------*
-* T   = BASE AND CLADDING STRESS-FREE TEMPERATURE                          [F] *
-* CFP = crack-face pressure loading flag                                       *
-* CFP = 0 ==> no crack-face pressure loading                                   *
-* CFP = 1 ==> crack-face pressure loading applied                              *
-*------------------------------------------------------------------------------*
-********************************************************************************
-SFRE T=488 CFP=0
-********************************************************************************
-* =========================                                                    *
-*    Records RESA AND RESC                                                     *
-* =========================                                                    *
-*    SET FLAGS FOR RESIDUAL STRESSES IN WELDS                                  *
-*------------------------------------------------------------------------------*
-* NRAX = 0   AXIAL           WELD RESIDUAL STRESSES OFF                        *
-* NRAX = 101 AXIAL           WELD RESIDUAL STRESSES ON                         *
-* NRCR = 0   CIRCUMFERENTIAL WELD RESIDUAL STRESSES OFF                        *
-* NRCR = 101 CIRCUMFERENTIAL WELD RESIDUAL STRESSES ON                         *
-*------------------------------------------------------------------------------*
-********************************************************************************
-RESA NRAX=0
-RESC NRCR=0
-********************************************************************************
-* ====================                                                         *
-*     Record TIME                                                              *
-* ====================                                                         *
-*------------------------------------------------------------------------------*
-* TOTAL = TIME PERIOD FOR WHICH TRANSIENT ANALYSIS IS TO BE PERFORMED    [MIN] *
-* DT = TIME INCREMENT                                                    [MIN] *
-*------------------------------------------------------------------------------*
-********************************************************************************
-TIME TOTAL=250 DT=0.1
-********************************************************************************
-* ====================                                                         *
-*     Record NPRA                                                              *
-* ====================                                                         *
-*------------------------------------------------------------------------------*
-* NTRAN = NUMBER OF TRANSIENTS TO BE INPUT                                     *
-*------------------------------------------------------------------------------*
-********************************************************************************
-NPRA NTRAN=1
-********************************************************************************
-********************************************************************************
-* =========================                                                    *
-*     Record TRAN                                                              *
-* =========================                                                    *
-*------------------------------------------------------------------------------*
-* ITRAN = PFM TRANSIENT NUMBER                                                 *
-* ISEQ  = THERMAL-HYDRAULIC SEQUENCE NUMBER                                    *
-*------------------------------------------------------------------------------*
-********************************************************************************
-TRAN ITRAN=1 ISEQ=1
-********************************************************************************
-* =========================                                                    *
-*    Record NHTH                                                               *
-* =========================                                                    *
-* CONVECTIVE HEAT TRANSFER COEFFICIENT TIME HISTORY                            *
-* NC = NUMBER OF (TIME,h) RECORD PAIRS FOLLOWING THIS LINE                     *
-* (CAN INPUT UP TO 1000 PAIRS OF t,h(t) data records                           *
-********************************************************************************
-NHTH NC=2
-* =====================================
-*     TIME [MIN] h[BTU/HR-FT**2-F]
-* =====================================
-       0   5000
-     250   5000
-********************************************************************************
-* =========================                                                    *
-*    Record NTTH                                                               *
-* =========================                                                    *
-* THERMAL TRANSIENT: COOLANT TEMPERATURE TIME HISTORY                          *
-* NT     = 101 ==> STYLIZED EXPONENTIAL DECAYING COOLANT TEMPERATURE           *
-*                                                                              *
-* TINIT  = INITIAL COOLANT TEMPERATURE (at time=0)                         [F] *
-* TFINAL = LOWEST TEMPERATURE IN TRANSIENT                                 [F] *
-* BETA   = DECAY CONSTANT                                              [1/MIN] *
-*                                                                              *
-* FAVLoad CALCULATES AND STORES THE COOLANT TEMPERATURE AT                     *
-* 100 EQUALLY-SPACED TIME STEPS ACCORDING TO THE RELATION                      *
-*                                                                              *
-* T(t) = TFINAL + (TINIT - TFINAL) * EXP(-BETA*t[min])                         *
-********************************************************************************
-NTTH NT=0
-STYL TINIT=550 TFINAL=70 BETA=0.025
-********************************************************************************
-* =========================                                                    *
-*    Record NPTH                                                               *
-* =========================                                                    *
-* PRESSURE TRANSIENT: PRESSURE vs TIME HISTORY                                 *
-* NP = NUMBER OF (TIME,PRESSURE) DATA PAIRS FOLLOWING THIS LINE                *
-* (CAN INPUT UP TO 1000 PAIRS OF t,P(t) data records                           *
-********************************************************************************
-NPTH NP=2
-* =====================================
-*     TIME [MIN] P(t)[ksi]
-* =====================================
-    0     2.25
-  250    0.046
+{
+  "vessel geometry" : {
+    "internal radius" : "86.0 in",
+    "wall thickness" : "8.75 in",
+    "clad thickness" :"0.25 in"
+  },
+  "material properties" : {
+    "base" : {
+      "temperature dependent" : false,
+      "reference temperature" : "70.0 F",
+      "density" : "489.0 lbm/ft^3",
+      "thermal conductivity" : "24.0 BTU/(h ft F)",
+      "specific heat" : "0.12 BTU/(lbm F)",
+      "young's elastic modulus" : "28000.0 ksi",
+      "thermal expansion coefficient" : "0.00000777 1/F",
+      "poisson's ratio" : 0.3
+    },
+    "clad" : {
+      "temperature dependent" : false,
+      "reference temperature" : "70.0 F",
+      "density" : "489.0 lbm/ft^3",
+      "thermal conductivity" : "10.0 BTU/(h ft F)",
+      "specific heat" : "0.12 BTU/(lbm F)",
+      "young's elastic modulus" : "22800.0 ksi",
+      "thermal expansion coefficient" : "0.00000945 1/F",
+      "poisson's ratio" : 0.3
+    }
+  },
+  "analysis options" : {
+    "stress-free temperature" : "488.0 F",
+    "crack-face pressure loading" : false,
+    "axial residual stresses in weld" : false,
+    "circumferential residual stresses in weld" : false
+  },
+  "transients" : {
+    "total time" : "250.0 m",
+    "dt" : "0.1 m",
+    "transient list" : [
+      {
+        "pfm transient number" : 1,
+        "thermal-hydraulic sequence number" : 1,
+        "convective heat transfer coefficient history table" : {
+          "t" : [
+            0.0, 250.0
+          ],
+          "h(t)" : [
+            5000.0, 5000.0
+          ],
+          "t units" : "m",
+          "h(t) units" : "BTU/(hr ft^2 F)"
+        },
+        "coolant temperature history table" : {
+          "initial coolant temperature" : "550 F",
+          "lowest transient temperature" : "70 F",
+          "decay constant" : "0.025 1/m"
+        },
+        "pressure history table" : {
+          "t" : [
+            0.0, 250.0
+          ],
+          "P(t)" : [
+            2.25, 0.046
+          ],
+          "t units" : "m",
+          "P(t) units" : "ksi"
+        }
+      }
+    ]
+  }
+}
